@@ -4,7 +4,7 @@
 
 ## Descripción
 
-Esta API web se basará en la consulta de horarios de la UGR. En vez de darte todas las asignaturas, tu eliges las necesarias y se te devolvera un horario correspondiente con las asignatuas seleccionadas.
+Esta API web se basará en la consulta de un calendario totalmente interactivo y la creación de eventos.
 
 ## Herramientas
 
@@ -19,6 +19,6 @@ Esta API web se basará en la consulta de horarios de la UGR. En vez de darte to
  - [Explicación de las herramientas](/docs/herramientas.md)
  - [Configuración del `git`](/docs/git.md)
 
- ## Autor
+## Autor
 
- Nikita Stetskiy [`github`](https://github.com/nikitastetskiy)
+Nikita Stetskiy [`github`](https://github.com/nikitastetskiy)
