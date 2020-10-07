@@ -1,6 +1,6 @@
 class events{
     constructor(fecha){
-        // Sin implementar
+        this.fecha = fecha;
     }
 
     getEvent(){
@@ -10,7 +10,4 @@ class events{
     setEvent(){
         throw new Error('Sin implementar');
     }
-
 }
-
-export default events;

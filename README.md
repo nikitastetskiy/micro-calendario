@@ -4,7 +4,7 @@
 
 ## Descripción
 
-Esta API web se basará en la consulta de eventos. Gracias a la API de Google Calendar el proyecto en cuestión podrá consultrar y filtrar los eventos solicitados, como por ejemplo por semanas o años. Al apoyarse en la integración con el calendario de Google es necesaria una cuenta de Google para la lectura de estos datos.
+Esta API web se basará en la consulta de eventos. He elegido este problema, porque tengo muchas complicaciones a la hora de organizar fechas. Así que he pensado que la mejor solución seria un bot personal de telegram, dónde puedas crear eventos y consultar los mismos de una manera eficiente.
 
 ## Herramientas
 
