@@ -23,6 +23,7 @@ Esta API web se basará en la consulta de eventos. He elegido este problema, por
 - [HU General del proyecto:](https://github.com/nikitastetskiy/micro-calendario/milestone/4)
   - [HU1](https://github.com/nikitastetskiy/micro-calendario/issues/4)
   - [HU2](https://github.com/nikitastetskiy/micro-calendario/issues/5)
+  - [HU3](https://github.com/nikitastetskiy/micro-calendario/issues/6)
 - [Explicación de las herramientas](/docs/herramientas.md)
 - [Configuración del `git`](/docs/git.md)
 
