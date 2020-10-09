@@ -16,8 +16,15 @@ Esta API web se basará en la consulta de eventos. He elegido este problema, por
 
 ### Enlaces de interés
 
- - [Explicación de las herramientas](/docs/herramientas.md)
- - [Configuración del `git`](/docs/git.md)
+- [Issues del proyecto](https://github.com/nikitastetskiy/micro-calendario/issues)
+- [Fichero YAML](https://github.com/nikitastetskiy/micro-calendario/blob/master/iv.yaml)
+- [Carpeta doc](https://github.com/nikitastetskiy/micro-calendario/tree/master/docs)
+- [Carpeta src](https://github.com/nikitastetskiy/micro-calendario/tree/master/src/eventscalendar)
+- [HU General del proyecto:](https://github.com/nikitastetskiy/micro-calendario/milestone/4)
+  - [HU1](https://github.com/nikitastetskiy/micro-calendario/issues/4)
+  - [HU2](https://github.com/nikitastetskiy/micro-calendario/issues/5)
+- [Explicación de las herramientas](/docs/herramientas.md)
+- [Configuración del `git`](/docs/git.md)
 
 ## Autor
 
