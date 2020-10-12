@@ -14,18 +14,14 @@ Esta API web se basará en la consulta de eventos. He elegido este problema, por
 
 - [GH Pages](https://nikitastetskiy.github.io/micro-calendario/)
 
+## Plan del proyecto
+
+[Aquí](/docs/plan.md) se desarrollará toda la información correspondiente a la planificación del proyecto y las distintas entregas. Se explicarán las pautas seguidas, la creación y la configuración de diferentes ficheros. 
+
 ### Enlaces de interés
 
-- [Issues del proyecto](https://github.com/nikitastetskiy/micro-calendario/issues)
-- [Fichero YAML](https://github.com/nikitastetskiy/micro-calendario/blob/master/iv.yaml)
-- [Carpeta doc](https://github.com/nikitastetskiy/micro-calendario/tree/master/docs)
-- [Carpeta src](https://github.com/nikitastetskiy/micro-calendario/tree/master/src/eventscalendar)
-- [HU General del proyecto:](https://github.com/nikitastetskiy/micro-calendario/milestone/4)
-  - [HU1](https://github.com/nikitastetskiy/micro-calendario/issues/4)
-  - [HU2](https://github.com/nikitastetskiy/micro-calendario/issues/5)
-  - [HU3](https://github.com/nikitastetskiy/micro-calendario/issues/6)
-- [Explicación de las herramientas](/docs/herramientas.md)
-- [Configuración del `git`](/docs/git.md)
+- [Herramientas](/docs/herramientas.md): Herramientas que se hayan implementado en el proyecto, dónde se explicará su debido uso y funcionamiento.
+- [IV](https://github.com/JJ/IV-20-21): Repositorio de la asignatura Infraestructura Virtual.
 
 ## Autor
 
