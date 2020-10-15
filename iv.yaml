@@ -1,2 +1,9 @@
 entidad:
 - src/eventscalendar/events.js
+- src/eventscalendar/planner.js
+lenguaje:
+- JavaScript
+test:
+- test/util.test.js
+taskfile:
+- package.json
