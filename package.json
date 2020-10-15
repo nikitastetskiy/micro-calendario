@@ -1,0 +1,25 @@
+{
+  "name": "micro-calendario",
+  "version": "1.0.0",
+  "description": "Consultor de eventos",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikitastetskiy/micro-calendario.git"
+  },
+  "author": "Nikita Stetskiy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikitastetskiy/micro-calendario/issues"
+  },
+  "homepage": "https://github.com/nikitastetskiy/micro-calendario#readme",
+  "devDependencies": {
+    "jest": "^26.5.3"
+  }
+}
