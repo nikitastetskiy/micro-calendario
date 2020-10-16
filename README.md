@@ -1,14 +1,24 @@
 # micro-calendario
 
-> Proyecto que pertenece a la asignatura Infraestructura Virtual (IV)
+> Proyecto que pertenece a la asignatura Infraestructura Virtual (IV).
 
 ## Descripción
 
-Esta API web se basará en la consulta de eventos. He elegido este problema, porque tengo muchas complicaciones a la hora de organizar fechas. Así que he pensado que la mejor solución seria un bot personal de telegram, dónde puedas crear eventos y consultar los mismos de una manera eficiente.
+Esta API web se basará en la consulta de eventos. He elegido este problema, porque tengo muchas complicaciones a la hora de organizar fechas. Así que he pensado que la mejor solución sería un bot personal de telegram, dónde puedas crear eventos y consultar los mismos de una manera eficiente.
 
-## Herramientas
+Para poder instalar la aplicación emplearemos los siguientes comandos. Es necesario tener [node](https://nodejs.org/) instalado para poder ejecutar los comandos `npm`:
 
-- Lenguaje: `Javascript`
+    git clone https://github.com/nikitastetskiy/micro-calendario.git
+
+> Para descargar el código, al no tener instalador, clonamos el repo en nuestra máquina.
+
+    npm install
+
+> Para instalar las dependencias del proyecto.
+
+    npm test
+
+> Para *testear* el proyecto.
 
 ## Documentación
 
