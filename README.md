@@ -1,4 +1,4 @@
-# micro-calendario
+# Micro Calendario
 
 > Proyecto que pertenece a la asignatura Infraestructura Virtual (IV).
 
