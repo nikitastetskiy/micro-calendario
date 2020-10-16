@@ -17,7 +17,6 @@ class planner{
             throw new Error('Mal declarado el evento');
         else
             this.eventos.push(evento);
-        
     }
 
     // El input sería "1995-12-17T03:24:00 Evento 1"
@@ -66,14 +65,4 @@ class planner{
     }
 }
 
-//var planner1 = new planner();
-//var evento1 = new events(new Date(2021, 7, 2, 0, 0, 0, 0), "Nuevo evento para un cumple");
-//var evento0 = new events(new Date(), "Tiempo actual");
-//var evento2 = new Date('2020-10-17T17:44:00');
-//evento0.toString();
-//evento1.toString();
-//console.log(evento2.toString());
-//console.log(planner1.convertirUTC(evento2));
-
 module.exports = planner;
-

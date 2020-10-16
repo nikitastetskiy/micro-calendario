@@ -14,12 +14,12 @@ class events{
     }
 
     setEvent(fecha, motivo){
-        if(fecha != null || motivo != null){
+        if(fecha == null || motivo == null)
+            throw new Error('Evento mal puesto');
+        else{
             this.fecha = fecha;
             this.motivo = motivo;
-        }
-        else
-            throw new Error('Evento mal puesto');
+        } 
     }
 
     toString(){
@@ -28,7 +28,3 @@ class events{
 }
 
 module.exports = events;
-
-// Se ha utilizado para probar cosas del código ( se borrará en un futuro)
-//var v = new events(new Date(2021, 7, 2, 0, 0, 0, 0), "Nuevo evento para un cumple");
-//v.getEvent();
