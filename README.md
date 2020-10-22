@@ -92,7 +92,6 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
             </ul>
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
         <li>Los archivos <code>JSON</code> correspondientes: <a href="/package.json"><code>package.json</code></a> y <a href="/package-lock.json"><code>package-lock.json</code></a>.</li>
-        <li>El fichero de test, el cual se encuentra en la <a href="/test">carpeta test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
     </ul>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </blockquote> </dd>
