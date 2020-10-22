@@ -27,8 +27,11 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
 <details><summary><b>Lenguaje de programación</b></summary>
 
 <dl>
-    <dd> <blockquote>He utilizado <code>Javascript</code>, ya que es un lenguaje ampliamente popular y que para mí es totalmente nuevo. Aunque por lo que he podido leer es un lenguaje bastante sencillo, rápido y muy versátil. Otra de sus famosas ventajas es que es multiplataforma y además es muy útil para desarrollar páginas dinámicas y aplicaciones web.
-    <br> Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>. </br> </blockquote> </dd>
+    <dd> <blockquote>
+    He utilizado <code>Javascript</code>, ya que es un lenguaje ampliamente popular y que para mí es totalmente nuevo. Aunque por lo que he podido leer es un lenguaje bastante sencillo, rápido y muy versátil. Otra de sus famosas ventajas es que es multiplataforma y además es muy útil para desarrollar páginas dinámicas y aplicaciones web.
+    <br>
+    Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
+    </br> </blockquote> </dd>
 </dl>
 
 </details>
@@ -37,21 +40,89 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
 
 <dl>
     <dd> <blockquote>
-    He elegido `Npm`, el cual es el gestor por defecto para `Node.js` y además un entorno de ejecución para `Javascript`. También lo he utilizado como herramienta de construcción, además este gestor funciona a través de un fichero `JSON`, ya que se realiza un seguimiento de módulos instalados. En este fichero se contendrá información del proyecto, tal como el nombre, descripción, autor, etc.
+    He elegido <code>Npm</code>, el cual es el gestor por defecto para <code>Node.js</code> y además un entorno de ejecución para <code>Javascript</code>. También lo he utilizado como herramienta de construcción, además este gestor funciona a través de un fichero <code>JSON</code>, ya que se realiza un seguimiento de módulos instalados. En este fichero se contendrá información del proyecto, tal como el nombre, descripción, autor, etc.
     <br>
-    De momento es una *herramienta* de construcción muy simple, dispone de funciones que por ahora abarcan todas nuestras necesidades, tales como instalar las distintas dependencias, módulos, paquetes y la ejecución de scipts, que por ahora solamente es *testing*. Además su metodología de programación es bastante sencilla, funciona como ya dije junto con un fichero `JSON`, el cual contiene:
+    De momento es una <em>herramienta</em> de construcción muy simple, dispone de funciones que por ahora abarcan todas nuestras necesidades, tales como instalar las distintas dependencias, módulos, paquetes y la ejecución de scipts, que por ahora solamente es <em>testing</em>. Además su metodología de programación es bastante sencilla, funciona como ya dije junto con un fichero <code>JSON</code>, el cual contiene:
     </br>
     <br>
-    - Todos los módulos necesarios para un proyecto y sus versiones instaladas.
-    - Todos los metadatos de un proyecto, como el autor y la licencia, entre otros.
-    - Secuencias de comandos que se pueden ejecutar para automatizar tareas del proyecto.
+        <ul>
+            <li>Todos los módulos necesarios para un proyecto y sus versiones instaladas.</li>
+            <li>Todos los metadatos de un proyecto, como el autor y la licencia, entre otros.</li>
+            <li>Secuencias de comandos que se pueden ejecutar para automatizar tareas del proyecto.</li>
+        </ul>
     </br>
     <br>
-    Los archivos `JSON` correspondientes: [`package.json`](../package.json) y [`package-lock.json`](../package-lock.json).
+    Los archivos <code>JSON</code> correspondientes: <a href="/package.json"><code>package.json</code></a> y <a href="/package-lock.json"><code>package-lock.json</code></a>.
     </br>
     <br>
-    Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.</blockquote> </dd>
+    Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
     </br>
+    </blockquote> </dd>
+</dl>
+
+</details>
+
+<details><summary><b><em>Testing</em></b></summary>
+
+<dl>
+    <dd> <blockquote>
+    <em>Si no está 'testeado', está roto</em>. Para llevar a cabo los test, he escogido <code>Jest</code>, el cual es un marco de prueba de JavaScript bastante sencillo de entender. <code>Taskfile</code> apuntará a <a href="/test/util.test.js"><code>util.test.js</code></a>, el cual será ejecutado mediante <a href="/package.json"><code>package.json</code></a>. <code>JSON</code> interviene en esta sección mediante la gestión de la instalación de dependencias con el comando <code>npm install --save-dev jest</code>. Se tendrá que modificar la parte de *scripts* para poder ejecutar <code>npm test</code>.
+    <br>
+    No podemos considerar a los <em>test</em> como una <em>herramienta</em> ya que se interpreta a los test como parte integral del proceso de desarrollo y el código. Aún así, <code>Jest</code> es un framework de testing generalista que podemos utilizar en cualquier situación, en el cual podemos crear, ejecutar y estructurar pruebas. El lado positivo de estas pruebas es que puedes tener control sobre el funcionamiento de lo que estas creando, puedes incluso realizar diferentes tipos de pruebas a un mismo bloque de código y de esta manera puedes saber que tan susceptible es esa parte de código.
+    </br>
+    <br>
+    La principal ventaja es que supone un buen flujo de trabajo con <code>Npm</code> y <code>Node</code>. Además posee una gran documentación y comunidad, lo cual hace mas facil y agil su aprendizaje. Tampoco hace falta una biblioteca de aserciones, ya que esta incluida.
+    </br>
+    <br>
+    Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
+    </br>
+    </blockquote> </dd>
+</dl>
+
+</details>
+
+</details>
+
+<details><summary><b>Enlaces a códigos</b></summary>
+
+<dl>
+    <dd> <blockquote>
+    <ul>
+        <li>Se ha añadido el fichero <a href="/iv.yaml"><code>YAML</code></a> <em>Ain't Markup Language</em>, con la ruta de la estructura del proyecto y las distintas claves cómo <em>lenguaje</em>, <em>test</em> y <em>taskfile</em>.</li>
+        <li>Se ha creado la <a href="/src">carpeta src</a> con distintas clases:</li>
+            <ul>
+                <li>La primera clase <a href="/src/eventscalendar.js"><code>eventscalendar.js</code></a> del proyecto, encargada de crear los eventos.</li>
+                <li>La segunda clase <a href="/src/planner.js"><code>planner.js</code></a> para poder organizar la clase evento.</li>
+            </ul>
+        <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
+    </ul>
+    <br>
+    Todo lo relacionado con las pautas de creación y configuración de estos ficheros se encuentra en <a href="docs/plan.md">este enlace</a>.
+    </br>
+    </blockquote> </dd>
+</dl>
+
+</details>
+
+<details><summary><b>Enlaces a <em>issues</em>, <em>milestones</em> y historias de usuario </b></summary>
+
+<dl>
+    <dd> <blockquote>
+    <ul>
+        <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues?q=is%3Aissue+is%3Aclosed)"><code>En este enlace</code></a> se encuentran los *issues* cerrados.</li>
+        <li><a href="https://github.com/nikitastetskiy/micro-calendario/milestones?state=closed"><code>En este enlace</code></a> se encuentran los *milestones* cerrados.</li>
+        <li>se han añadido las <a href="https://github.com/nikitastetskiy/micro-calendario/milestone/4"><code>Historias de Usuario</code></a> con su <a href="https://github.com/nikitastetskiy/micro-calendario/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories"><code>label</code></a> correspondiente. Aquí se puede consultar las diferentes HU:</li>
+            <ul>
+                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/4"><code>HU1</code></a>: Consulta de eventos.</li>
+                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/5"><code>HU2</code></a>: Consulta específica de eventos.</li>
+                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/6"><code>HU3</code></a>: Creación de eventos.</li>
+            </ul>
+        <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
+    </ul>
+    <br>
+    Todo lo relacionado con las pautas de creación y configuración de estos ficheros se encuentra en <a href="docs/plan.md">este enlace</a>.
+    </br>
+    </blockquote> </dd>
 </dl>
 
 </details>
