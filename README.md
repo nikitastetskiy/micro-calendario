@@ -87,8 +87,8 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         <li>Se ha añadido el fichero <a href="/iv.yaml"><code>YAML</code></a> <em>Ain't Markup Language</em>, con la ruta de la estructura del proyecto y las distintas claves cómo <em>lenguaje</em>, <em>test</em> y <em>taskfile</em>.</li>
         <li>Se ha creado la <a href="/src">carpeta src</a> con distintas clases:</li>
             <ul>
-                <li>La primera clase <a href="/src/eventscalendar/eventscalendar.js"><code>eventscalendar.js</code></a> del proyecto, encargada de crear los eventos.</li>
-                <li>La segunda clase <a href="/src/eventscalendar/planner.js"><code>planner.js</code></a> para poder organizar la clase evento.</li>
+                <li>La primera clase <a href="/src/eventscalendar/events.js"><code>events.js</code></a> del proyecto, encargada de crear los eventos.</li>
+                <li>La segunda clase <a href="/src/eventscalendar/planner.js"><code>planner.js</code></a> para poder organizar y gestionar la clase evento.</li>
             </ul>
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
         <li>Los archivos <code>JSON</code> correspondientes: <a href="/package.json"><code>package.json</code></a> y <a href="/package-lock.json"><code>package-lock.json</code></a>.</li>
