@@ -27,7 +27,8 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
 <details><summary><b>Lenguaje de programación</b></summary>
 
 <dl>
-    <dd> <blockquote>He utilizado <code>Javascript</code>, ya que es un lenguaje ampliamente popular y que para mí es totalmente nuevo. Aunque por lo que he podido leer es un lenguaje bastante sencillo, rápido y muy versátil. Otra de sus famosas ventajas es que es multiplataforma y además es muy útil para desarrollar páginas dinámicas y aplicaciones web. Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.</blockquote> </dd>
+    <dd> <blockquote>He utilizado <code>Javascript</code>, ya que es un lenguaje ampliamente popular y que para mí es totalmente nuevo. Aunque por lo que he podido leer es un lenguaje bastante sencillo, rápido y muy versátil. Otra de sus famosas ventajas es que es multiplataforma y además es muy útil para desarrollar páginas dinámicas y aplicaciones web.
+    <br> Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>. </br> </blockquote> </dd>
 </dl>
 
 </details>
@@ -35,7 +36,22 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
 <details><summary><b>Gestor de paquetes</b></summary>
 
 <dl>
-    <dd> <blockquote>He elegido <code>Npm</code>, el cual es el gestor por defecto para <code>Node.js</code> y además un entorno de ejecución para <code>Javascript</code>. También lo he utilizado como herramienta de construcción, además este gestor funciona a través de un fichero <code>JSON</code>, ya que se realiza un seguimiento de módulos instalados. En este fichero se contendrá información del proyecto, tal como el nombre, descripción, autor, etc. Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.</blockquote> </dd>
+    <dd> <blockquote>
+    He elegido `Npm`, el cual es el gestor por defecto para `Node.js` y además un entorno de ejecución para `Javascript`. También lo he utilizado como herramienta de construcción, además este gestor funciona a través de un fichero `JSON`, ya que se realiza un seguimiento de módulos instalados. En este fichero se contendrá información del proyecto, tal como el nombre, descripción, autor, etc.
+    <br>
+    De momento es una *herramienta* de construcción muy simple, dispone de funciones que por ahora abarcan todas nuestras necesidades, tales como instalar las distintas dependencias, módulos, paquetes y la ejecución de scipts, que por ahora solamente es *testing*. Además su metodología de programación es bastante sencilla, funciona como ya dije junto con un fichero `JSON`, el cual contiene:
+    </br>
+    <br>
+    - Todos los módulos necesarios para un proyecto y sus versiones instaladas.
+    - Todos los metadatos de un proyecto, como el autor y la licencia, entre otros.
+    - Secuencias de comandos que se pueden ejecutar para automatizar tareas del proyecto.
+    </br>
+    <br>
+    Los archivos `JSON` correspondientes: [`package.json`](../package.json) y [`package-lock.json`](../package-lock.json).
+    </br>
+    <br>
+    Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.</blockquote> </dd>
+    </br>
 </dl>
 
 </details>
