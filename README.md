@@ -46,6 +46,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
     He elegido <code>Npm</code>, el cual es el gestor por defecto para <code>Node.js</code> y además un entorno de ejecución para <code>Javascript</code>. También lo he utilizado como herramienta de construcción, además este gestor funciona a través de un fichero <code>JSON</code>, ya que se realiza un seguimiento de módulos instalados. En este fichero se contendrá información del proyecto, tal como el nombre, descripción, autor, etc.
     </br><br>
     De momento es una <em>herramienta</em> de construcción muy simple, dispone de funciones que por ahora abarcan todas nuestras necesidades, tales como instalar las distintas dependencias, módulos, paquetes y la ejecución de scipts, que por ahora solamente es <em>testing</em>. Además su metodología de programación es bastante sencilla, funciona como ya dije junto con un fichero <code>JSON</code>, el cual contiene:
+    </br>
     <br>
     <ul>
         <li>Todos los módulos necesarios para un proyecto y sus versiones instaladas.</li>
@@ -91,7 +92,6 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
             </ul>
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
     </ul>
-    </br>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </blockquote> </dd>
 </dl>
@@ -114,7 +114,6 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
             </ul>
         <li>El fichero de test, el cual se encuentra en la <a href="/test">carpeta test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
     </ul>
-    </br>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </blockquote> </dd>
 </dl>
