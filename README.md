@@ -30,7 +30,9 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
     <dd> <blockquote>
     He utilizado <code>Javascript</code>, ya que es un lenguaje ampliamente popular y que para mí es totalmente nuevo. Aunque por lo que he podido leer es un lenguaje bastante sencillo, rápido y muy versátil. Otra de sus famosas ventajas es que es multiplataforma y además es muy útil para desarrollar páginas dinámicas y aplicaciones web.
     <br>
+    <br>
     Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
+    </br>
     </br> </blockquote> </dd>
 </dl>
 
@@ -51,9 +53,7 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
             <li>Secuencias de comandos que se pueden ejecutar para automatizar tareas del proyecto.</li>
         </ul>
     </br>
-    <br>
     Los archivos <code>JSON</code> correspondientes: <a href="/package.json"><code>package.json</code></a> y <a href="/package-lock.json"><code>package-lock.json</code></a>.
-    </br>
     <br>
     Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
     </br>
@@ -67,9 +67,9 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
 <dl>
     <dd> <blockquote>
     <em>Si no está 'testeado', está roto</em>. Para llevar a cabo los test, he escogido <code>Jest</code>, el cual es un marco de prueba de JavaScript bastante sencillo de entender. <code>Taskfile</code> apuntará a <a href="/test/util.test.js"><code>util.test.js</code></a>, el cual será ejecutado mediante <a href="/package.json"><code>package.json</code></a>. <code>JSON</code> interviene en esta sección mediante la gestión de la instalación de dependencias con el comando <code>npm install --save-dev jest</code>. Se tendrá que modificar la parte de *scripts* para poder ejecutar <code>npm test</code>.
-    <br>
+    <br><br>
     No podemos considerar a los <em>test</em> como una <em>herramienta</em> ya que se interpreta a los test como parte integral del proceso de desarrollo y el código. Aún así, <code>Jest</code> es un framework de testing generalista que podemos utilizar en cualquier situación, en el cual podemos crear, ejecutar y estructurar pruebas. El lado positivo de estas pruebas es que puedes tener control sobre el funcionamiento de lo que estas creando, puedes incluso realizar diferentes tipos de pruebas a un mismo bloque de código y de esta manera puedes saber que tan susceptible es esa parte de código.
-    </br>
+    </br></br>
     <br>
     La principal ventaja es que supone un buen flujo de trabajo con <code>Npm</code> y <code>Node</code>. Además posee una gran documentación y comunidad, lo cual hace mas facil y agil su aprendizaje. Tampoco hace falta una biblioteca de aserciones, ya que esta incluida.
     </br>
@@ -97,7 +97,7 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
     </ul>
     <br>
-    Todo lo relacionado con las pautas de creación y configuración de estos ficheros se encuentra en <a href="docs/plan.md">este enlace</a>.
+    Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </br>
     </blockquote> </dd>
 </dl>
@@ -109,18 +109,18 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
 <dl>
     <dd> <blockquote>
     <ul>
-        <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues?q=is%3Aissue+is%3Aclosed)"><code>En este enlace</code></a> se encuentran los *issues* cerrados.</li>
-        <li><a href="https://github.com/nikitastetskiy/micro-calendario/milestones?state=closed"><code>En este enlace</code></a> se encuentran los *milestones* cerrados.</li>
-        <li>se han añadido las <a href="https://github.com/nikitastetskiy/micro-calendario/milestone/4"><code>Historias de Usuario</code></a> con su <a href="https://github.com/nikitastetskiy/micro-calendario/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories"><code>label</code></a> correspondiente. Aquí se puede consultar las diferentes HU:</li>
+        <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues?q=is%3Aissue+is%3Aclosed)">En este enlace</a> se encuentran los <em>issues</em> cerrados.</li>
+        <li><a href="https://github.com/nikitastetskiy/micro-calendario/milestones?state=closed">En este enlace</a> se encuentran los <em>milestones</em> cerrados.</li>
+        <li>Se han añadido las <a href="https://github.com/nikitastetskiy/micro-calendario/milestone/4">Historias de Usuario</a> con su <a href="https://github.com/nikitastetskiy/micro-calendario/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories">label</a> correspondiente. Aquí se puede consultar las diferentes HU:</li>
             <ul>
-                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/4"><code>HU1</code></a>: Consulta de eventos.</li>
-                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/5"><code>HU2</code></a>: Consulta específica de eventos.</li>
-                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/6"><code>HU3</code></a>: Creación de eventos.</li>
+                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/4">HU1</a>: Consulta de eventos.</li>
+                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/5">HU2</a>: Consulta específica de eventos.</li>
+                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/6">HU3</a>: Creación de eventos.</li>
             </ul>
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
     </ul>
     <br>
-    Todo lo relacionado con las pautas de creación y configuración de estos ficheros se encuentra en <a href="docs/plan.md">este enlace</a>.
+    Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </br>
     </blockquote> </dd>
 </dl>
