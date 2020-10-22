@@ -8,10 +8,6 @@ Esta API web se basará en la consulta de eventos. He elegido este problema, por
 
 Para poder instalar la aplicación emplearemos los siguientes comandos. Es necesario tener [node](https://nodejs.org/) instalado para poder ejecutar los comandos `npm`:
 
-    git clone https://github.com/nikitastetskiy/micro-calendario.git
-
-> Para descargar el código, al no tener instalador, clonamos el repo en nuestra máquina.
-
     npm install
 
 > Para instalar las dependencias del proyecto.
@@ -26,7 +22,13 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
 
 ## Plan del proyecto
 
-[Aquí](/docs/plan.md) se desarrollará toda la información correspondiente a la planificación del proyecto y las distintas entregas. Se explicarán las pautas seguidas, la creación y la configuración de diferentes ficheros. 
+[Aquí](/docs/plan.md) se desarrollará toda la información correspondiente a la planificación del proyecto y las distintas entregas. Se explicarán las pautas seguidas, la creación y la configuración de diferentes ficheros.
+
+<details><summary><b>Lenguaje de programación</b></summary>
+
+>He utilizado `Javascript`, ya que es un lenguaje ampliamente popular y que para mí es totalmente nuevo. Aunque por lo que he podido leer es un lenguaje bastante sencillo, rápido y muy versátil. Otra de sus famosas ventajas es que es multiplataforma y además es muy útil para desarrollar páginas dinámicas y aplicaciones web.
+
+</details>
 
 ### Enlaces de interés
 
