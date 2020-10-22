@@ -29,9 +29,9 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 <details><summary><b>Lenguaje de programación</b></summary>
 
 <dl>
-    <dd> <blockquote>
+    <dd> <blockquote><br>
     He utilizado <code>Javascript</code>, ya que es un lenguaje ampliamente popular y que para mí es totalmente nuevo. Aunque por lo que he podido leer es un lenguaje bastante sencillo, rápido y muy versátil. Otra de sus famosas ventajas es que es multiplataforma y además es muy útil para desarrollar páginas dinámicas y aplicaciones web.
-    <br>
+    </br><br>
     <br>
     Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
     </br>
@@ -43,9 +43,9 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 <details><summary><b>Gestor de paquetes</b></summary>
 
 <dl>
-    <dd> <blockquote>
+    <dd> <blockquote><br>
     He elegido <code>Npm</code>, el cual es el gestor por defecto para <code>Node.js</code> y además un entorno de ejecución para <code>Javascript</code>. También lo he utilizado como herramienta de construcción, además este gestor funciona a través de un fichero <code>JSON</code>, ya que se realiza un seguimiento de módulos instalados. En este fichero se contendrá información del proyecto, tal como el nombre, descripción, autor, etc.
-    <br><br>
+    </br><br><br>
     De momento es una <em>herramienta</em> de construcción muy simple, dispone de funciones que por ahora abarcan todas nuestras necesidades, tales como instalar las distintas dependencias, módulos, paquetes y la ejecución de scipts, que por ahora solamente es <em>testing</em>. Además su metodología de programación es bastante sencilla, funciona como ya dije junto con un fichero <code>JSON</code>, el cual contiene:
     </br></br>
     <ul>
@@ -65,28 +65,27 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 <details><summary><b><em>Testing</em></b></summary>
 
 <dl>
-    <dd> <blockquote>
+    <dd> <blockquote><br>
     <em>Si no está 'testeado', está roto</em>. Para llevar a cabo los test, he escogido <code>Jest</code>, el cual es un marco de prueba de JavaScript bastante sencillo de entender. <code>Taskfile</code> apuntará a <a href="/test/util.test.js"><code>util.test.js</code></a>, el cual será ejecutado mediante <a href="/package.json"><code>package.json</code></a>. <code>JSON</code> interviene en esta sección mediante la gestión de la instalación de dependencias con el comando <code>npm install --save-dev jest</code>. Se tendrá que modificar la parte de *scripts* para poder ejecutar <code>npm test</code>.
-    <br><br>
+    </br><br><br>
     No podemos considerar a los <em>test</em> como una <em>herramienta</em>, ya que se interpreta a los test como parte integral del proceso de desarrollo y el código. Aun así, <code>Jest</code> es un framework de testing generalista que podemos utilizar en cualquier situación, en el cual podemos crear, ejecutar y estructurar pruebas. El lado positivo de estas pruebas es que puedes tener control sobre el funcionamiento de lo que estás creando, puedes incluso realizar diferentes tipos de pruebas a un mismo bloque de código y de esta manera puedes saber que tan susceptible es esa parte de código.
     </br></br>
     <br>
     La principal ventaja es que supone un buen flujo de trabajo con <code>Npm</code> y <code>Node</code>. Además posee una gran documentación y comunidad, lo cual hace más fácil y ágil su aprendizaje. Tampoco hace falta una biblioteca de aserciones, ya que está incluida.
     </br>
-    <br>
+    <br><br>
     Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
-    </br>
+    </br></br>
     </blockquote> </dd>
 </dl>
 
 </details>
 
-</details>
-
-<details><summary><b>Enlaces a códigos</b></summary>
+<details><summary><b>Enlaces a códigos y clases</b></summary>
 
 <dl>
     <dd> <blockquote>
+    <br>
     <ul>
         <li>Se ha añadido el fichero <a href="/iv.yaml"><code>YAML</code></a> <em>Ain't Markup Language</em>, con la ruta de la estructura del proyecto y las distintas claves cómo <em>lenguaje</em>, <em>test</em> y <em>taskfile</em>.</li>
         <li>Se ha creado la <a href="/src">carpeta src</a> con distintas clases:</li>
@@ -96,9 +95,10 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
             </ul>
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
     </ul>
-    <br>
-    Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </br>
+    <br><br>
+    Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
+    </br></br>
     </blockquote> </dd>
 </dl>
 
@@ -109,6 +109,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 <dl>
     <dd> <blockquote>
     <ul>
+    <br>
         <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues?q=is%3Aissue+is%3Aclosed)">En este enlace</a> se encuentran los <em>issues</em> cerrados.</li>
         <li><a href="https://github.com/nikitastetskiy/micro-calendario/milestones?state=closed">En este enlace</a> se encuentran los <em>milestones</em> cerrados.</li>
         <li>Se han añadido las <a href="https://github.com/nikitastetskiy/micro-calendario/milestone/4">Historias de Usuario</a> con su <a href="https://github.com/nikitastetskiy/micro-calendario/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories">label</a> correspondiente. Aquí se puede consultar las diferentes HU:</li>
@@ -119,9 +120,10 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
             </ul>
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
     </ul>
+    </br>
     <br>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
-    </br>
+    </br><br></br>
     </blockquote> </dd>
 </dl>
 
