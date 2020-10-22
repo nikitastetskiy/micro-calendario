@@ -1,3 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+blockquote { 
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+</style>
+</head>
+<body>
+
 # Micro Calendario
 
 > Proyecto que pertenece a la asignatura Infraestructura Virtual (IV).
