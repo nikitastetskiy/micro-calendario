@@ -71,7 +71,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
     No podemos considerar a los <em>test</em> como una <em>herramienta</em>, ya que se interpreta a los test como parte integral del proceso de desarrollo y el código. Aun así, <code>Jest</code> es un framework de testing generalista que podemos utilizar en cualquier situación, en el cual podemos crear, ejecutar y estructurar pruebas. El lado positivo de estas pruebas es que puedes tener control sobre el funcionamiento de lo que estás creando, puedes incluso realizar diferentes tipos de pruebas a un mismo bloque de código y de esta manera puedes saber que tan susceptible es esa parte de código.
     </br><br>
     La principal ventaja es que supone un buen flujo de trabajo con <code>Npm</code> y <code>Node</code>. Además posee una gran documentación y comunidad, lo cual hace más fácil y ágil su aprendizaje. Tampoco hace falta una biblioteca de aserciones, ya que está incluida.
-    <br>
+    </br><br>
     Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
     </blockquote> </dd>
 </dl>
@@ -87,10 +87,11 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         <li>Se ha añadido el fichero <a href="/iv.yaml"><code>YAML</code></a> <em>Ain't Markup Language</em>, con la ruta de la estructura del proyecto y las distintas claves cómo <em>lenguaje</em>, <em>test</em> y <em>taskfile</em>.</li>
         <li>Se ha creado la <a href="/src">carpeta src</a> con distintas clases:</li>
             <ul>
-                <li>La primera clase <a href="/src/eventscalendar.js"><code>eventscalendar.js</code></a> del proyecto, encargada de crear los eventos.</li>
-                <li>La segunda clase <a href="/src/planner.js"><code>planner.js</code></a> para poder organizar la clase evento.</li>
+                <li>La primera clase <a href="/src/eventscalendar/eventscalendar.js"><code>eventscalendar.js</code></a> del proyecto, encargada de crear los eventos.</li>
+                <li>La segunda clase <a href="/src/eventscalendar/planner.js"><code>planner.js</code></a> para poder organizar la clase evento.</li>
             </ul>
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
+        <li>Los archivos <code>JSON</code> correspondientes: <a href="/package.json"><code>package.json</code></a> y <a href="/package-lock.json"><code>package-lock.json</code></a>.</li>
     </ul>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </blockquote> </dd>
