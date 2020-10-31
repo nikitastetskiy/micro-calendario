@@ -31,3 +31,5 @@
 ## [Tercer Hito](http://jj.github.io/IV/documentos/proyecto/3.Docker): Creación de un contenedor para pruebas
 - Se ha creado el [Dockerfile](../Dockerfile) y [.dockerignore](../.dockerignore) siguiendo las [recomendaciones de buenas prácticas](https://docs.docker.com/engine/reference/builder/). 
 - También se ha creado la [build](https://hub.docker.com/r/nikitastetskiy/micro-calendario/builds) correspondiente en mi perfil de [Dockerhub](https://hub.docker.com/u/nikitastetskiy). La configuración del Dockerhub se puede ver [aquí](../docs/herramientas.md). Para esto se ha añadido [HU4](https://github.com/nikitastetskiy/micro-calendario/issues/14).
+- Se ha explicado [la configuración y la optimización del docker](/docs/herramientas.md).
+- [*Milestone*](https://github.com/nikitastetskiy/micro-calendario/milestone/6) correspondiente al hito 3.

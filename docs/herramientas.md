@@ -44,4 +44,6 @@ Se ha configurado y automatizado DockerHub:
 
 ### GitHub Container Registry
 
-Se ha configurado y enlazado GHCR:
+Se ha configurado y enlazado [GHCR](https://github.com/nikitastetskiy?tab=packages&repo_name=micro-calendario):
+
+<img src="../docs/img/docker2.png" alt="drawing"/>
