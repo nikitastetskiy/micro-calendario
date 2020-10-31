@@ -18,11 +18,7 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
 
 ## Documentación
 
-- [GH Pages](https://nikitastetskiy.github.io/micro-calendario/)
-
-## Plan del proyecto
-
-[Aquí](/docs/plan.md) se desarrollará toda la información correspondiente a la planificación del proyecto y las distintas entregas. Se explicarán las pautas seguidas, la creación y la configuración de diferentes ficheros.
+En el [plan del proyecto](/docs/plan.md) se desarrollará toda la información correspondiente a la planificación del proyecto y las distintas entregas. Se explicarán las pautas seguidas, la creación y la configuración de diferentes ficheros.
 
 Aun así, a continuación puede disponer de toda la información esencial del proyecto:
 
@@ -120,10 +116,11 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 
 </details>
 
-### Enlaces de interés
+## Enlaces de interés
 
 - [Herramientas](/docs/herramientas.md): Herramientas que se hayan implementado en el proyecto, dónde se explicará su debido uso y funcionamiento.
 - [IV](https://github.com/JJ/IV-20-21): Repositorio de la asignatura Infraestructura Virtual.
+- [GH Pages](https://nikitastetskiy.github.io/micro-calendario/)
 
 ## Autor
 

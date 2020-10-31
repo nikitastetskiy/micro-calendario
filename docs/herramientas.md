@@ -19,3 +19,29 @@ Los archivos `JSON` correspondientes: [`package.json`](../package.json) y [`pack
 No podemos considerar a los *test* como una *herramienta*, ya que se interpreta a los test como parte integral del proceso de desarrollo y el código.Aun así, `Jest` es un framework de testing generalista que podemos utilizar en cualquier situación, en el cual podemos crear, ejecutar y estructurar pruebas. El lado positivo de estas pruebas es que puedes tener control sobre el funcionamiento de lo que estás creando, puedes incluso realizar diferentes tipos de pruebas a un mismo bloque de código y de esta manera puedes saber que tan susceptible es esa parte de código.
 
 La principal ventaja es que supone un buen flujo de trabajo con `Npm` y `Node`. Además posee una gran documentación y comunidad, lo cual hace más fácil y ágil su aprendizaje. Tampoco hace falta una biblioteca de aserciones, ya que está incluida.
+
+**Docker**: Se ha creado el [Dockerfile](../Dockerfile) y [.dockerignore](../.dockerignore) siguiendo las [recomendaciones de buenas prácticas](https://docs.docker.com/engine/reference/builder/). También se ha creado la [build](https://hub.docker.com/r/nikitastetskiy/micro-calendario/builds) correspondiente en mi perfil de [Dockerhub](https://hub.docker.com/u/nikitastetskiy).
+
+Estos son los contenedores que he podido probar localmente:
+
+| Contenedor Base | Tiempo de Construcción | Tiempo de Ejecución (*testing*) | Tamaño |
+| :-- | :--: | :--: | :--: | :--: |
+| node:14-stretch | 109.3s | 14.91s | 978MB |
+| node:14-buster| 26.7s | 15.884s | 947MB |
+| alpine:3.12 | 12.4s | 13.592s | 90.5MB |
+| node:14-slim | 14.2s | 14.382s | 202MB |
+
+<br>Al principio he usado *buster* y la versión stretch, ya que son contenedores que lo tienen todo, aunque *buster* más nuevo, debido a que es la versión Debian 10. Al ser por así decirlo una versión genérica te incluye todas las necesidades, aunque el tiempo de construcción y el tamaño es bastante desfavorable. Por lo que me he inclinado en versiones más slim, en la cual la más ventajosa es *14-slim*, ya que tarda muy poco en construirse y el tamaño de la imagen también es bastante pequeño, aún así, incluye todo lo necesario para el funcionamiento. He descartado la versión Alpine, pese a ser muy ligera, debido a que utiliza `/bin/sh` como shell, `apk` como packagemanger y algunas librerías inusuales.
+
+Se ha utilizado node ya que no se necesita realizar instalaciones como superusuario, todo esto por motivos de seguridad. Posteriormente se ha utilizado también una optimización de la imagen limpiando la cache de npm, además de hacer un clean install.
+
+### DockerHub
+
+Se ha configurado y automatizado DockerHub:
+
+<img src="../docs/img/miconfig2.png" alt="drawing" width="357"/>
+<img src="../docs/img/docker1.png" alt="drawing" width="359"/>
+
+### GitHub Container Registry
+
+Se ha configurado y enlazado GHCR:
