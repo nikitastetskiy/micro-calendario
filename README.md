@@ -122,8 +122,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         <h3>DockerHub</h3>
         Se ha configurado y automatizado DockerHub:
         </br><br>
-        <img src="docs/img/miconfig2.png" alt="drawing" width="437"/>
-        <img src="docs/img/docker1.png" alt="drawing" width="439"/>
+        <img src="docs/img/docker_mix.png" alt="drawing"/>
         </br><br>
         <h3>GitHub Container Registry</h3>
         Se ha configurado y enlazado <a href="https://github.com/nikitastetskiy?tab=packages&repo_name=micro-calendario">GHCR</a>:

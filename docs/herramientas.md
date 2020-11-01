@@ -39,8 +39,7 @@ Se ha utilizado node ya que no se necesita realizar instalaciones como superusua
 
 Se ha configurado y automatizado DockerHub:
 
-<img src="../docs/img/miconfig2.png" alt="drawing" width="437"/>
-<img src="../docs/img/docker1.png" alt="drawing" width="439"/>
+<img src="../docs/img/docker_mix.png" alt="drawing"/>
 
 ### GitHub Container Registry
 
@@ -48,20 +47,20 @@ Se ha configurado y enlazado [GHCR](https://github.com/nikitastetskiy?tab=packag
 
 <img src="../docs/img/docker2.png" alt="drawing"/>
 
-    </br><br>
-    Ejecución y prueba:
-    </br><br>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-    docker pull nikitastetskiy/micro-calendario
-    <br>
-    docker run -t -v `pwd`:/test nikitastetskiy/micro-calendario
-    </code></pre></div></div>
-    </br>
-    Si usamos GitHub Container Registry:
-    <br></br>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-    docker pull ghcr.io/nikitastetskiy/micro-calendario:latest
-    <br>
-    docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
-    </code></pre></div></div>
-    </br>
+</br><br>
+Ejecución y prueba:
+</br><br>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+docker pull nikitastetskiy/micro-calendario
+<br>
+docker run -t -v `pwd`:/test nikitastetskiy/micro-calendario
+</code></pre></div></div>
+</br>
+Si usamos GitHub Container Registry:
+<br></br>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+docker pull ghcr.io/nikitastetskiy/micro-calendario:latest
+<br>
+docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
+</code></pre></div></div>
+</br>
