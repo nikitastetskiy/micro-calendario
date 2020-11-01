@@ -31,9 +31,9 @@ Estos son los contenedores que he podido probar localmente:
 | alpine:3.12 | 12.4s | 13.592s | 90.5MB |
 | node:14-slim | 14.2s | 14.382s | 202MB |
 
-<br>Al principio he usado *buster* y la versión stretch, ya que son contenedores que lo tienen todo, aunque *buster* más nuevo, debido a que es la versión Debian 10. Al ser por así decirlo una versión genérica te incluye todas las necesidades, aunque el tiempo de construcción y el tamaño es bastante desfavorable. Por lo que me he inclinado en versiones más slim, en la cual la más ventajosa es *14-slim*, ya que tarda muy poco en construirse y el tamaño de la imagen también es bastante pequeño, aún así, incluye todo lo necesario para el funcionamiento. He descartado la versión Alpine, pese a ser muy ligera, debido a que utiliza `/bin/sh` como shell, `apk` como packagemanger y algunas librerías inusuales.
+<br>Al principio he usado *buster* y la versión stretch, ya que son contenedores que lo tienen todo, aunque *buster* más nuevo, debido a que es la versión Debian 10. Al ser por así decirlo una versión genérica te incluye todas las necesidades, aunque el tiempo de construcción y el tamaño es bastante desfavorable. Por lo que me he inclinado en versiones más slim, en la cual la más ventajosa es *14-slim*, ya que tarda muy poco en construirse y el tamaño de la imagen también es bastante pequeño, aun así, incluye todo lo necesario para el funcionamiento. He descartado la versión Alpine, pese a ser muy ligera, debido a que utiliza `/bin/sh` como shell, `apk` como packagemanger y algunas librerías inusuales.
 
-Se ha utilizado node ya que no se necesita realizar instalaciones como superusuario, todo esto por motivos de seguridad. Posteriormente se ha utilizado también una optimización de la imagen limpiando la cache de npm, además de hacer un clean install.
+Se ha utilizado node, ya que no se necesita realizar instalaciones como superusuario, todo esto por motivos de seguridad. Posteriormente se ha utilizado también una optimización de la imagen limpiando la caché de npm, además de hacer un clean install.
 
 ### DockerHub
 
