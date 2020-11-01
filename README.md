@@ -122,8 +122,8 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         <h3>DockerHub</h3>
         Se ha configurado y automatizado DockerHub:
         </br><br>
-        <img src="docs/img/miconfig2.png" alt="drawing" width="357"/>
-        <img src="docs/img/docker1.png" alt="drawing" width="359"/>
+        <img src="docs/img/miconfig2.png" alt="drawing" width="437"/>
+        <img src="docs/img/docker1.png" alt="drawing" width="439"/>
         </br><br>
         <h3>GitHub Container Registry</h3>
         Se ha configurado y enlazado <a href="https://github.com/nikitastetskiy?tab=packages&repo_name=micro-calendario">GHCR</a>:
@@ -132,18 +132,19 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         </br><br>
         Ejecución y prueba:
         </br><br>
-        <code>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
         docker pull nikitastetskiy/micro-calendario
         <br>
         docker run -t -v `pwd`:/test nikitastetskiy/micro-calendario
-        </code>
-        </br><br>
+        </code></pre></div></div>
+        </br>
         Si usamos GitHub Container Registry:
-        </br><code><br>
+        <br></br>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
         docker pull ghcr.io/nikitastetskiy/micro-calendario:latest
         <br>
         docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
-        </code><br>
+        </code></pre></div></div>
         </br>
         Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
     </blockquote> </dd>
