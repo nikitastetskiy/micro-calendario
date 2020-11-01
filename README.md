@@ -164,6 +164,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
                 <li>La segunda clase <a href="/src/eventscalendar/planner.js"><code>planner.js</code></a> para poder organizar y gestionar la clase evento.</li>
             </ul>
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
+        <li>Se ha creado el <a href="/Dockerfile">Dockerfile</a> y <a href="/.dockerignore">.dockerignore</a>.</li>
         <li>Los archivos <code>JSON</code> correspondientes: <a href="/package.json"><code>package.json</code></a> y <a href="/package-lock.json"><code>package-lock.json</code></a>.</li>
     </ul>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
