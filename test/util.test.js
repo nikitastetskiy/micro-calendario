@@ -22,7 +22,7 @@ test('Test de la función translate', () => {
     expect(secuencia).toMatchObject(secuencia_esperada);
 });
 
-//planner - getEvent y addEvent
+//planner - getEvent, addEvent y toString (?)
 test('Test de la función getEvent y addEvent', () => {
     var plan = new planner();
     var secuencia = plan.translate('2020-10-17T17:44:00 Evento 1');

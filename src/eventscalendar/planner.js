@@ -20,6 +20,7 @@ class planner{
     }
 
     // El input sería "1995-12-17T03:24:00 Evento 1"
+    // El output es un evento con datos separados
     translate(secuencia){
         secuencia = secuencia.trim();
         if(this.validarSecuencia(secuencia) == false)
@@ -34,6 +35,8 @@ class planner{
     }
 
     // Esto es un poco inutil por ahora
+    // Sirve para convertir una fecha en UTC
+    // aunque new Date lo hace ya automaticamente
     convertirUTC(fec){
         var fec_utc =  Date.UTC(fec.getUTCFullYear(), fec.getUTCMonth(), fec.getUTCDate(),
         fec.getUTCHours(), fec.getUTCMinutes(), fec.getUTCSeconds());
@@ -62,6 +65,14 @@ class planner{
         }
         else
             return true;
+    }
+
+    toString(){
+        var secuencia = '';
+        for (var i = 0; i<this.eventos.length; i++){
+            secuencia += this.getEvent(i).toString() + '\n';
+        }
+        return secuencia;
     }
 }
 

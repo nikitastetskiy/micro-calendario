@@ -1,6 +1,8 @@
 class events{
+
+    // Input fecha tipo Date
+    // y motivo tipo String
     constructor(fecha, motivo){
-        //this.fecha = Object.assign(new Date(), fecha);
         this.fecha = fecha;
         this.motivo = motivo;
     }
