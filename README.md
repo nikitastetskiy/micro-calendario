@@ -74,66 +74,78 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 
 </details>
 
-</details>
-
 <details><summary><b><em>Docker</em></b></summary>
-<a href="https://github.com/nikitastetskiy?tab=packages&repo_name=micro-calendario">GHCR</a>
 <dl>
     <dd> <blockquote>
         <br>
-        Se ha creado el <a href="../Dockerfile">Dockerfile</a> y <a href="../.dockerignore">.dockerignore</a> siguiendo las <a href="https://docs.docker.com/engine/reference/builder/">recomendaciones de buenas prácticas</a>. También se ha creado la <a href="https://hub.docker.com/r/nikitastetskiy/micro-calendario/builds">build</a> correspondiente en mi perfil de <a href="https://hub.docker.com/u/nikitastetskiy">Dockerhub</a>.
+        Se ha creado el <a href="/Dockerfile">Dockerfile</a> y <a href="/.dockerignore">.dockerignore</a> siguiendo las <a href="https://docs.docker.com/engine/reference/builder/">recomendaciones de buenas prácticas</a>. También se ha creado la <a href="https://hub.docker.com/r/nikitastetskiy/micro-calendario/builds">build</a> correspondiente en mi perfil de <a href="https://hub.docker.com/u/nikitastetskiy">Dockerhub</a>.
         </br><br>
         Estos son los contenedores que he podido probar localmente:
         </br><br>
         <table style="width:100%">
         <tr>
-            <td>Contenedor Base</td>
+            <td><b>Contenedor Base</b></td>
             <th>Tiempo de Construcción</th> 
             <th>Tiempo de Ejecución (<em>testing</em>)</th>
             <th>Tamaño</th>
         </tr>
         <tr>
-            <td>node:14-stretch</td>
+            <td><b>node:14-stretch</b></td>
             <th>109.3s</th> 
             <th>14.91s</th>
             <th>978MB</th>
         </tr>
         <tr>
-            <td>node:14-buster</td>
+            <td><b>node:14-buster</b></td>
             <th>26.7s</th> 
             <th>15.884s</th>
             <th>947MB</th>
         </tr>
         <tr>
-            <td>alpine:3.12</td>
+            <td><b>alpine:3.12</b></td>
             <th>12.4s</th> 
             <th>13.592s</th>
             <th>90.5MB</th>
         </tr>
         <tr>
-            <td>node:14-slim</td>
+            <td><b>node:14-slim</b></td>
             <th>14.2s</th> 
             <th>14.382s</th>
             <th>202MB</th>
         </tr>
         </table>
-        </br><br>
+        <br>
         Al principio he usado <em>buster</em> y la versión stretch, ya que son contenedores que lo tienen todo, aunque <em>buster</em> más nuevo, debido a que es la versión Debian 10. Al ser por así decirlo una versión genérica te incluye todas las necesidades, aunque el tiempo de construcción y el tamaño es bastante desfavorable. Por lo que me he inclinado en versiones más slim, en la cual la más ventajosa es <em>14-slim</em>, ya que tarda muy poco en construirse y el tamaño de la imagen también es bastante pequeño, aún así, incluye todo lo necesario para el funcionamiento. He descartado la versión Alpine, pese a ser muy ligera, debido a que utiliza <code>/bin/sh</code> como shell, <code>apk</code> como packagemanger y algunas librerías inusuales.
         </br><br>
         Se ha utilizado node ya que no se necesita realizar instalaciones como superusuario, todo esto por motivos de seguridad. Posteriormente se ha utilizado también una optimización de la imagen limpiando la cache de npm, además de hacer un clean install.
         </br><br>
         <h3>DockerHub</h3>
-        </br><br>
         Se ha configurado y automatizado DockerHub:
         </br><br>
         <img src="docs/img/miconfig2.png" alt="drawing" width="357"/>
         <img src="docs/img/docker1.png" alt="drawing" width="359"/>
         </br><br>
         <h3>GitHub Container Registry</h3>
-        </br><br>
         Se ha configurado y enlazado <a href="https://github.com/nikitastetskiy?tab=packages&repo_name=micro-calendario">GHCR</a>:
         </br><br>
         <img src="docs/img/docker2.png" alt="drawing"/>
+        </br><br>
+        Ejecución y prueba:
+        </br><br>
+        <code>
+        docker pull nikitastetskiy/micro-calendario
+        <br>
+        docker run -t -v `pwd`:/test nikitastetskiy/micro-calendario
+        </code>
+        </br><br>
+        Si usamos GitHub Container Registry:
+        </br><code><br>
+        docker pull ghcr.io/nikitastetskiy/micro-calendario:latest
+        <br>
+        docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
+        </code><br>
+        </br>
+        Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
     </blockquote> </dd>
 </dl>
 
@@ -157,6 +169,8 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </blockquote> </dd>
 </dl>
+
+</details>
 
 <details><summary><b>Enlaces a <em>issues</em>, <em>milestones</em> e historias de usuario </b></summary>
 
