@@ -36,12 +36,16 @@ Estos son los contenedores que he podido probar localmente:
 | :-- | :--: | :--: | :--: | :--: |
 | node:14-stretch | 109.3s | 14.91s | 978MB |
 | node:14-buster| 26.7s | 15.884s | 947MB |
-| alpine:3.12 | 12.4s | 13.592s | 90.5MB |
+| alpine:latest | 12.4s | 13.592s | 90.5MB |
 | node:14-slim | 14.2s | 14.382s | 202MB |
+| mhart/alpine-node:slim | 30.6s | 12.801s | 161MB |
 
-<br>Al principio he usado *buster* y la versión stretch, ya que son contenedores que lo tienen todo, aunque *buster* más nuevo, debido a que es la versión Debian 10. Al ser por así decirlo una versión genérica te incluye todas las necesidades, aunque el tiempo de construcción y el tamaño es bastante desfavorable. Por lo que me he inclinado en versiones más slim, en la cual la más ventajosa es *14-slim*, ya que tarda muy poco en construirse y el tamaño de la imagen también es bastante pequeño, aun así, incluye todo lo necesario para el funcionamiento. He descartado la versión Alpine, pese a ser muy ligera, debido a que utiliza `/bin/sh` como shell, `apk` como packagemanger y algunas librerías inusuales.
 
-Se ha utilizado node, ya que no se necesita realizar instalaciones como superusuario, todo esto por motivos de seguridad. Posteriormente se ha utilizado también una optimización de la imagen limpiando la caché de npm, además de hacer un clean install.
+<br>Al principio he usado *buster* y la versión stretch, ya que son contenedores que lo tienen todo, aunque *buster* más nuevo, debido a que es la versión Debian 10. Al ser por así decirlo una versión genérica te incluye todas las necesidades, aunque el tiempo de construcción y el tamaño es bastante desfavorable. Por lo que me he inclinado en versiones más slim, en la cual la más ventajosa es *14-slim*, ya que tarda muy poco en construirse y el tamaño de la imagen también es bastante pequeño, aun así, incluye todo lo necesario para el funcionamiento. También he utilizado una versión no oficial que incluía únicamente node (mhart/alpine-node:slim).
+
+Aunque finalmente me he decantado por la versión Alpine, ya que es muy ligera, pese a que utiliza `/bin/sh` como shell, `apk` como packagemanger y algunas librerías inusuales. Esta imagen es mucho mejor, ya que aunque hayamos quitado YARN en como mejora de optimización en node:14-slim ([aquí el commit correspondiente](fd7b952d3767baa59aa3693af82a2eec1605ef88)), la imagen ubuntu sigue ocupando bastante espacio. Por lo que al utilizar alpine, su última versión disponible, nos ahorramos bastante espacio. También borramos la caché y los archivos `JSON` innecesarios.
+
+Se ha utilizado node como usuario, ya que no se necesita realizar instalaciones como superusuario, todo esto por motivos de seguridad. Posteriormente se ha utilizado también una optimización de la imagen limpiando la caché de npm, además de hacer un clean install. También se ha removido archivos no necesario, como los `JSON`. Otros ejemplos de optimización vienen siendo el uso de herramientas como squash o podman.
 
 ### DockerHub
 
