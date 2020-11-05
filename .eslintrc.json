@@ -6,6 +6,7 @@
       "no-unused-vars": "warn",
       "no-console": "off",
       "func-names": "off",
+      "no-plusplus": "off",
       "no-process-exit": "off",
       "object-shorthand": "off",
       "class-methods-use-this": "off",
