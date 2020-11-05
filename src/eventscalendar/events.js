@@ -1,7 +1,7 @@
 class events {
     // Input fecha tipo Date
     // y motivo tipo String
-    constructor(fecha, motivo){
+    constructor(fecha, motivo) {
         this.fecha = fecha;
         this.motivo = motivo;
     }
