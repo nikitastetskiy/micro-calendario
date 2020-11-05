@@ -27,20 +27,27 @@ test('función translate', () => {
 
 // Planner - getEvent, addEvent y toString (?)
 test('función getEvent y addEvent', () => {
-    var plan = new Planner();
-    var secuencia = plan.translate('2020-10-17T17:44:00 Evento 1');
-    var secuencia_esperada = new Events(new Date('2020-10-17T17:44:00'), "Evento 1");
+    const plan = new Planner();
+    const secuencia = plan.translate('2020-10-17T17:44:00 Evento 1');
+    const secuenciaEsperada = new Events(
+        new Date('2020-10-17T17:44:00'),
+        'Evento 1'
+    );
     plan.addEvent(secuencia);
 
-    var secuencia2 = plan.getEvent(0);
+    const secuencia2 = plan.getEvent(0);
     expect(secuencia.toString()).toEqual(secuencia2.toString());
-    expect(secuencia.toString()).toEqual(secuencia_esperada.toString());
-    expect(secuencia).toMatchObject(secuencia_esperada);
+    expect(secuencia.toString()).toEqual(secuenciaEsperada.toString());
+    expect(secuencia).toMatchObject(secuenciaEsperada);
     expect(secuencia).toMatchObject(secuencia2);
 
-    var secuencia3 = plan.translate('2020-1717:44:00');
-    expect(() => {plan.addEvent(secuencia3)}).toThrow(Error('Mal declarado el evento'));
-    expect(() => {plan.getEvent(10)}).toThrow(Error('Fuera de rango'));
+    const secuencia3 = plan.translate('2020-1717:44:00');
+    expect(() => {
+        plan.addEvent(secuencia3);
+    }).toThrow(Error('Mal declarado el evento'));
+    expect(() => {
+        plan.getEvent(10);
+    }).toThrow(Error('Fuera de rango'));
 });
 
 // Planner - Convertir UTC
