@@ -14,13 +14,13 @@ class events {
         return this.motivo;
     }
 
-    setEvent(fecha, motivo){
-        if(fecha == null || motivo == null)
+    setEvent(fecha, motivo) {
+        if (fecha == null || motivo == null)
             throw new Error('Evento mal puesto');
-        else{
+        else {
             this.fecha = fecha;
             this.motivo = motivo;
-        } 
+        }
     }
 
     toString(){
