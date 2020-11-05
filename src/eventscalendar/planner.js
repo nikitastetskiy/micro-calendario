@@ -13,8 +13,7 @@ class planner {
     addEvent(evento) {
         if (evento == null || evento === false)
             throw new Error('Mal declarado el evento');
-        else
-            this.eventos.push(evento);
+        else this.eventos.push(evento);
     }
 
     // El input sería "1995-12-17T03:24:00 Evento 1"
