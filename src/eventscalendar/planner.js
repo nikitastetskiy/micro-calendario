@@ -50,21 +50,9 @@ class planner {
         let novalida = false;
         if (s.length < 19) return false;
 
-        const sec =
-            s[0] +
-            s[1] +
-            s[2] +
-            s[3] +
-            s[5] +
-            s[6] +
-            s[8] +
-            s[9] +
-            s[11] +
-            s[12] +
-            s[14] +
-            s[15] +
-            s[17] +
-            s[18];
+        // prettier-ignore
+        const sec = s[0] + s[1] + s[2] + s[3] + s[5] + s[6] + s[8] +
+            s[9] + s[11] + s[12] + s[14] + s[15] + s[17] + s[18];
         const sec2 = s[4] + s[7] + s[10] + s[13] + s[16];
 
         for (let i = 0; i < sec.length; i++) {
