@@ -51,13 +51,13 @@ test('función getEvent y addEvent', () => {
 });
 
 // Planner - Convertir UTC
-test('Test de la función Convertir UTC', () => {
-    var plan = new planner();
-    var secuencia = plan.convertirUTC(new Date ('2020-10-17T17:44:00'));
-    var secuencia_esperada = (new Date ('2020-10-17T17:44:00'));
+test('función Convertir UTC', () => {
+    const plan = new Planner();
+    const secuencia = plan.convertirUTC(new Date ('2020-10-17T17:44:00'));
+    const secuenciaEsperada = new Date('2020-10-17T17:44:00');
 
-    expect(secuencia.toISOString()).toEqual(secuencia_esperada.toISOString());
-    expect(secuencia).toMatchObject(secuencia_esperada);
+    expect(secuencia.toISOString()).toEqual(secuenciaEsperada.toISOString());
+    expect(secuencia).toMatchObject(secuenciaEsperada);
 });
 
 // planner - validar secuencia
