@@ -1,5 +1,4 @@
-class events{
-
+class events {
     // Input fecha tipo Date
     // y motivo tipo String
     constructor(fecha, motivo){
@@ -7,11 +6,11 @@ class events{
         this.motivo = motivo;
     }
 
-    getFecha(){
+    getFecha() {
         return this.fecha;
     }
 
-    getMotivo(){
+    getMotivo() {
         return this.motivo;
     }
 
