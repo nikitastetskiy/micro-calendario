@@ -81,10 +81,10 @@ class planner {
         return true;
     }
 
-    toString(){
-        var secuencia = '';
-        for (var i = 0; i<this.eventos.length; i++){
-            secuencia += this.getEvent(i).toString() + '\n';
+    toString() {
+        let secuencia = '';
+        for (let i = 0; i < this.eventos.length; i++) {
+            secuencia += `${this.getEvent(i).toString()}\n`;
         }
         return secuencia;
     }
