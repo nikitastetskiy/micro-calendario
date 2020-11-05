@@ -70,24 +70,31 @@ test('función Validar Secuencia', () => {
     expect(final).toBe(false);
 });
 
-///////////////////////////////
-//EVENTS
+// // // // // // // // // // //
+// EVENTS
 //
-//events - getFecha, getMotivo, setEvent y toString
-test('Test de la función getFecha, getMotivo, setEvent y toString', () => {
-    var v = new events(new Date(2021, 7, 2, 0, 0, 0, 0), "Nuevo evento para un cumple");
-    var date = new Date(2021, 7, 2, 0, 0, 0, 0);
+// Events - getFecha, getMotivo, setEvent y toString
+test('función getFecha, getMotivo, setEvent y toString', () => {
+    const v = new Events(
+        new Date(2021, 7, 2, 0, 0, 0, 0),
+        'Nuevo evento para un cumple'
+    );
+    let date = new Date(2021, 7, 2, 0, 0, 0, 0);
     expect(v.getFecha().toString()).toEqual(date.toString());
     expect(v.getFecha()).toMatchObject(date);
     expect(v.getMotivo()).toBe('Nuevo evento para un cumple');
 
-    v.setEvent(new Date(2020, 8, 2, 13, 27, 45, 0), "Otro cumple");
+    v.setEvent(new Date(2020, 8, 2, 13, 27, 45, 0), 'Otro cumple');
     date = new Date(2020, 8, 2, 13, 27, 45, 0);
     expect(v.getFecha().toString()).toEqual(date.toString());
     expect(v.getFecha()).toMatchObject(date);
     expect(v.getMotivo()).toBe('Otro cumple');
 
-    expect(() => {v.setEvent(null, "Otro cumple")}).toThrow(Error('Evento mal puesto'));
-    expect(() => {v.setEvent(new Date(), null)}).toThrow(Error('Evento mal puesto'));
+    expect(() => {
+        v.setEvent(null, 'Otro cumple');
+    }).toThrow(Error('Evento mal puesto'));
+    expect(() => {
+        v.setEvent(new Date(), null);
+    }).toThrow(Error('Evento mal puesto'));
 });
 
