@@ -61,12 +61,12 @@ test('función Convertir UTC', () => {
 });
 
 // planner - validar secuencia
-test('Test de la función Validar Secuencia', () => {
-    var plan = new planner();
-    var final = plan.validarSecuencia('2020-10-17T17:44:00');
+test('función Validar Secuencia', () => {
+    const plan = new Planner();
+    let final = plan.validarSecuencia('2020-10-17T17:44:00');
     expect(final).toBe(true);
 
-    var final = plan.validarSecuencia('2020-10-17:4:00');
+    final = plan.validarSecuencia('2020-10-17:4:00');
     expect(final).toBe(false);
 });
 
