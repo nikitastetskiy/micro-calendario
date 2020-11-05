@@ -1,32 +1,35 @@
-var planner = require('../src/eventscalendar/planner');
-var events = require('../src/eventscalendar/events');
+const Planner = require('../src/eventscalendar/planner');
+const Events = require('../src/eventscalendar/events');
 
-//////////////////////
-//PLANNER
+// // // // // // // // // // //
+// PLANNER
 //
-//planner - translate
-test('Test de la función translate', () => {
-    var plan = new planner();
-    var secuencia = plan.translate('2020-10-17T17:44:00 Evento 1');
-    var secuencia_esperada = new events(new Date('2020-10-17T17:44:00'), "Evento 1");
-    expect(secuencia.toString()).toEqual(secuencia_esperada.toString());
-    expect(secuencia).toMatchObject(secuencia_esperada);
+// Planner - translate
+test('función translate', () => {
+    const plan = new Planner();
+    let secuencia = plan.translate('2020-10-17T17:44:00 Evento 1');
+    let secuenciaEsperada = new Events(
+        new Date('2020-10-17T17:44:00'),
+        'Evento 1'
+    );
+    expect(secuencia.toString()).toEqual(secuenciaEsperada.toString());
+    expect(secuencia).toMatchObject(secuenciaEsperada);
 
     secuencia = plan.translate('2020-10-17T17:44:0Evento 1');
-    final = secuencia.toString();
-    expect(final).toBe("false");
+    const final = secuencia.toString();
+    expect(final).toBe('false');
 
     secuencia = plan.translate('2020-10-17T17:44:00');
-    secuencia_esperada = new events(new Date('2020-10-17T17:44:00'), " ");
-    expect(secuencia.toString()).toEqual(secuencia_esperada.toString());
-    expect(secuencia).toMatchObject(secuencia_esperada);
+    secuenciaEsperada = new Events(new Date('2020-10-17T17:44:00'), ' ');
+    expect(secuencia.toString()).toEqual(secuenciaEsperada.toString());
+    expect(secuencia).toMatchObject(secuenciaEsperada);
 });
 
-//planner - getEvent, addEvent y toString (?)
-test('Test de la función getEvent y addEvent', () => {
-    var plan = new planner();
+// Planner - getEvent, addEvent y toString (?)
+test('función getEvent y addEvent', () => {
+    var plan = new Planner();
     var secuencia = plan.translate('2020-10-17T17:44:00 Evento 1');
-    var secuencia_esperada = new events(new Date('2020-10-17T17:44:00'), "Evento 1");
+    var secuencia_esperada = new Events(new Date('2020-10-17T17:44:00'), "Evento 1");
     plan.addEvent(secuencia);
 
     var secuencia2 = plan.getEvent(0);
@@ -40,7 +43,7 @@ test('Test de la función getEvent y addEvent', () => {
     expect(() => {plan.getEvent(10)}).toThrow(Error('Fuera de rango'));
 });
 
-// planner - Convertir UTC
+// Planner - Convertir UTC
 test('Test de la función Convertir UTC', () => {
     var plan = new planner();
     var secuencia = plan.convertirUTC(new Date ('2020-10-17T17:44:00'));
