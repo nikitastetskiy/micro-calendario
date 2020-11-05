@@ -5,15 +5,13 @@ class planner {
         this.eventos = [];
     }
 
-    getEvent(cont){
-        if(cont>=0 && cont<this.eventos.length)
-            return this.eventos[cont];
-        else
-            throw new Error('Fuera de rango');
+    getEvent(cont) {
+        if (cont >= 0 && cont < this.eventos.length) return this.eventos[cont];
+        throw new Error('Fuera de rango');
     }
 
-    addEvent(evento){
-        if(evento == null || evento == false)
+    addEvent(evento) {
+        if (evento == null || evento === false)
             throw new Error('Mal declarado el evento');
         else
             this.eventos.push(evento);
