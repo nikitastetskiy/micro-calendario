@@ -42,7 +42,7 @@ class planner {
             fec.getUTCMinutes(),
             fec.getUTCSeconds()
         );
-        const fecnew = new Date (fecUtc);
+        const fecnew = new Date(fecUtc);
         return fecnew;
     }
 
