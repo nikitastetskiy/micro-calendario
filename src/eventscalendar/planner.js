@@ -33,11 +33,17 @@ class planner {
     // Esto es un poco inutil por ahora
     // Sirve para convertir una fecha en UTC
     // aunque new Date lo hace ya automaticamente
-    convertirUTC(fec){
-        var fec_utc =  Date.UTC(fec.getUTCFullYear(), fec.getUTCMonth(), fec.getUTCDate(),
-        fec.getUTCHours(), fec.getUTCMinutes(), fec.getUTCSeconds());
-        var fec_new = new Date (fec_utc);
-        return fec_new;
+    convertirUTC(fec) {
+        const fecUtc = Date.UTC(
+            fec.getUTCFullYear(),
+            fec.getUTCMonth(),
+            fec.getUTCDate(),
+            fec.getUTCHours(),
+            fec.getUTCMinutes(),
+            fec.getUTCSeconds()
+        );
+        const fecnew = new Date (fecUtc);
+        return fecnew;
     }
 
     validarSecuencia(s){
