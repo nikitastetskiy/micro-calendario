@@ -53,7 +53,7 @@ test('función getEvent y addEvent', () => {
 // Planner - Convertir UTC
 test('función Convertir UTC', () => {
     const plan = new Planner();
-    const secuencia = plan.convertirUTC(new Date ('2020-10-17T17:44:00'));
+    const secuencia = plan.convertirUTC(new Date('2020-10-17T17:44:00'));
     const secuenciaEsperada = new Date('2020-10-17T17:44:00');
 
     expect(secuencia.toISOString()).toEqual(secuenciaEsperada.toISOString());
@@ -97,4 +97,3 @@ test('función getFecha, getMotivo, setEvent y toString', () => {
         v.setEvent(new Date(), null);
     }).toThrow(Error('Evento mal puesto'));
 });
-
