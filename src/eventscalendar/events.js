@@ -23,8 +23,8 @@ class events {
         }
     }
 
-    toString(){
-        return (this.fecha.toString() + ' ' + this.motivo.toString());
+    toString() {
+        return `${this.fecha.toString()} ${this.motivo.toString()}`;
     }
 }
 
