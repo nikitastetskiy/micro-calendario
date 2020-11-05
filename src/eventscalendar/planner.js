@@ -1,4 +1,4 @@
-const events = require('./events');
+const Events = require('./events');
 
 class planner {
     constructor() {
@@ -18,16 +18,15 @@ class planner {
 
     // El input sería "1995-12-17T03:24:00 Evento 1"
     // El output es un evento con datos separados
-    translate(secuencia){
-        secuencia = secuencia.trim();
-        if(this.validarSecuencia(secuencia) == false)
-            return false;
-        if(secuencia.length == 19)
-            secuencia += '  ';
-        var fecha = new Date(`${secuencia.slice(0, 19)}`);
-        //fecha = this.convertirUTC(fecha);
-        var motivo = secuencia.slice(20);
-        var eventoAux = new events(fecha, motivo);
+    translate(secuencia) {
+        let sec = secuencia;
+        sec = sec.trim();
+        if (this.validarSecuencia(sec) === false) return false;
+        if (sec.length === 19) sec += '  ';
+        const fecha = new Date(`${sec.slice(0, 19)}`);
+        // fecha = this.convertirUTC(fecha);
+        const motivo = sec.slice(20);
+        const eventoAux = new Events(fecha, motivo);
         return eventoAux;
     }
 
