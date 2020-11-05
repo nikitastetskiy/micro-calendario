@@ -1,7 +1,7 @@
 const events = require('./events');
 
-class planner{
-    constructor(){
+class planner {
+    constructor() {
         this.eventos = [];
     }
 
