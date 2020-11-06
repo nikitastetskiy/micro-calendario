@@ -6,4 +6,12 @@ services:
 before_install:
     - docker pull nikitastetskiy/micro-calendario
 
-script: docker run -t -v `pwd`:/test nikitastetskiy/micro-calendario
+script:
+    - docker run -t -v `pwd`:/test nikitastetskiy/micro-calendario
+
+deploy:
+    provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN_PAGES
+    on:
+        branch: gh-pages
