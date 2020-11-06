@@ -8,7 +8,6 @@ LABEL maintainer "Nikita Stetskiy <nikin929@gmail.com>"  \
     version = "1.0.0"
 RUN addgroup -S node && adduser -S node -G node \
     && apk add --no-cache --update nodejs-dev=12.18.4-r0 npm=12.18.4-r0 \
-    && npm i -g jest ts-jest \
     && mkdir /app && chown node:node /app
 WORKDIR /app 
 RUN mkdir /node_modules && chown node:node /node_modules
@@ -21,6 +20,7 @@ USER node
 FROM base AS dev
 COPY --chown=node:node package.json package-lock.json ./
 RUN npm ci --silent --progress=false --no-optional  \
+    && npm i -g jest ts-jest \
     && npm cache clean --force \
     && rm package*.json 
 
