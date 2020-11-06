@@ -21,7 +21,7 @@ FROM base AS dev
 COPY --chown=node:node package.json package-lock.json ./
 RUN npm ci --silent --progress=false --no-optional  \
     && npm cache clean --force \
-    && npm install --save-dev jest \
+    && npm i jest \
     && rm package*.json 
 
 # Realizamos todos los pasos necesarios
