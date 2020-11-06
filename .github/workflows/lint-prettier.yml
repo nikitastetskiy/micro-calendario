@@ -1,4 +1,4 @@
-name: linter
+name: Eslinter y Prettier
 
 on: push
 
