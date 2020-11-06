@@ -147,7 +147,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
         </code></pre></div></div>
         </br>
-        Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>
+        Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
     </blockquote> </dd>
 </dl>
 
