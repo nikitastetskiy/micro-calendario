@@ -14,7 +14,7 @@ Para poder instalar la aplicación emplearemos los siguientes comandos. Es neces
 
     npm test
 
-> Para *testear* el proyecto.
+> Para _testear_ el proyecto.
 
 ## Documentación
 
@@ -147,7 +147,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
         </code></pre></div></div>
         </br>
-        Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>.
+        Todo lo relacionado con esta explicación se encuentra en <a href="docs/herramientas.md">este enlace</a>
     </blockquote> </dd>
 </dl>
 
@@ -199,9 +199,9 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 
 ## Enlaces de interés
 
-- [Herramientas](/docs/herramientas.md): Herramientas que se hayan implementado en el proyecto, dónde se explicará su debido uso y funcionamiento.
-- [IV](https://github.com/JJ/IV-20-21): Repositorio de la asignatura Infraestructura Virtual.
-- [GH Pages](https://nikitastetskiy.github.io/micro-calendario/).
+-   [Herramientas](/docs/herramientas.md): Herramientas que se hayan implementado en el proyecto, dónde se explicará su debido uso y funcionamiento.
+-   [IV](https://github.com/JJ/IV-20-21): Repositorio de la asignatura Infraestructura Virtual.
+-   [GH Pages](https://nikitastetskiy.github.io/micro-calendario/).
 
 ## Autor
 
