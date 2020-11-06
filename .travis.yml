@@ -1,11 +1,9 @@
-language: node_js
-node_js:
-    - 14
-    - 13
-    - 12
-    - 11
-    - 10
-install:
-    - npm ci
-script:
-    - npm test
+language: minimal
+
+services:
+    - docker
+
+before_install:
+    - docker pull nikitastetskiy/micro-calendario
+
+script: docker run -t -v `pwd`:/test nikitastetskiy/micro-calendario
