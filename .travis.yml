@@ -6,4 +6,4 @@ language:
     - docker images
   
   script: 
-    - docker run -t -v  $TRAVIS_BUILD_DIR:/test nikitastetskiy/micro-calendario
+    - docker run -t -v  $TRAVIS_BUILD_DIR:/test nikitastetskiy/micro-calendario 
