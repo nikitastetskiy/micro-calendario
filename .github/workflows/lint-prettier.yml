@@ -1,29 +1,25 @@
-name: Lint
+name: linter
 
 on: push
 
 jobs:
-    run-linters:
-        name: Run linters
+    ESlint:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Check out Git repository
-              uses: actions/checkout@v2
-
-            - name: Set up Node.js
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 12
-
-            # ESLint and Prettier must be in `package.json`
-            - name: Install Node.js dependencies
+            - uses: actions/checkout@v2
+            - name: Instalación de npm
               run: npm install
+            - name: Ejecución de lint
+              run: npm run lint
 
-            - name: Run linters
-              uses: wearerequired/lint-action@v1
+    hadolint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Ejecución de hadolint
+              uses: brpaz/hadolint-action@master
               with:
-                  github_token: ${{ secrets.github_token }}
-                  # Enable linters
-                  eslint: true
-                  prettier: true
+                  dockerfile: 'Dockerfile'
