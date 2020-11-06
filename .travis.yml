@@ -1,9 +1,11 @@
-language:
-    - minimal
-  
-  install:
-    - docker pull nikitastetskiy/micro-calendario
-    - docker images
-  
-  script: 
-    - docker run -t -v  $TRAVIS_BUILD_DIR:/test nikitastetskiy/micro-calendario 
+language: node_js
+node_js:
+    - 14
+    - 13
+    - 12
+    - 11
+    - 10
+install:
+    - npm ci
+script:
+    - npm test
