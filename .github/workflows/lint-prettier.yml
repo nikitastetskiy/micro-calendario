@@ -8,18 +8,9 @@ jobs:
 
         steps:
             - uses: actions/checkout@v2
+
             - name: Instalación de npm
               run: npm install
-            - name: Ejecución de lint
+
+            - name: Ejecución de lint y prettier
               run: npm run lint
-
-    hadolint:
-        runs-on: ubuntu-latest
-
-        steps:
-            - uses: actions/checkout@v2
-
-            - name: Ejecución de hadolint
-              uses: brpaz/hadolint-action@master
-              with:
-                  dockerfile: 'Dockerfile'
