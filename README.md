@@ -2,6 +2,8 @@
 
 > Proyecto que pertenece a la asignatura Infraestructura Virtual (IV).
 
+https://travis-ci.com/nikitastetskiy/micro-calendario.svg?branch=master
+
 ## Descripción
 
 Esta API web se basará en la consulta de eventos. He elegido este problema, porque tengo muchas complicaciones a la hora de organizar fechas. Así que he pensado que la mejor solución sería un bot personal de telegram, dónde puedas crear eventos y consultar los mismos de una manera eficiente.
