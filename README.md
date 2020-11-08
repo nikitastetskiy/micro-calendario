@@ -166,11 +166,11 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
     <dd> <blockquote>
     <ul>
     <br>
-        <li><code>Travis</code>: se ha configurado el <a href="../.travis.yml">fichero travis</a>, siguiendo las <a href="https://docs.travis-ci.com/user/languages/minimal-and-generic/#minimal">buenas prácticas</a>, de tal manera que pueda ejecutar los test junto al docker que ya teníamos implementado anteriormente. También se ha añadido una pequeña integración continua en el mismo archivo, el cual hace que se me actualice <a href="https://nikitastetskiy.github.io/micro-calendario/">gh-pages</a> autómaticamente.</li>
+        <li><code>Travis</code>: se ha configurado el <a href=".travis.yml">fichero travis</a>, siguiendo las <a href="https://docs.travis-ci.com/user/languages/minimal-and-generic/#minimal">buenas prácticas</a>, de tal manera que pueda ejecutar los test junto al docker que ya teníamos implementado anteriormente. También se ha añadido una pequeña integración continua en el mismo archivo, el cual hace que se me actualice <a href="https://nikitastetskiy.github.io/micro-calendario/">gh-pages</a> autómaticamente.</li>
         <img src="docs/img/travis1.png" alt="float:left" class="center"/>
-        <li><code>Shippable</code>: se ha configurado el <a href="../shippable.yml">fichero shippable</a> de una manera muy parecida a travis, pero ahora en vez de utilizar el docker, se ha utilizado directamente node para comprobar los test.</li>
+        <li><code>Shippable</code>: se ha configurado el <a href="shippable.yml">fichero shippable</a> de una manera muy parecida a travis, pero ahora en vez de utilizar el docker, se ha utilizado directamente node para comprobar los test.</li>
         <img src="docs/img/travis2.png" alt="float:left" class="center"/>
-        <li><code>GitHub actions - workflow</code>: se ha configurado el <a href="../.github/workflows/ghcr.yml">fichero ghcr</a> y el <a href="../.github/workflows/lint-prettier.yml">fichero linter-prettier</a>. El fichero ghcr se ha utilizado para publicar un paquete docker en la parte de packages de github, testea el contenedor docker y se publica. El fichero linter-prettier se usa para corregir la sintaxis y el estilo del código con reglas definidas por mí y configuraciones generales.</li>
+        <li><code>GitHub actions - workflow</code>: se ha configurado el <a href=".github/workflows/ghcr.yml">fichero ghcr</a> y el <a href=".github/workflows/lint-prettier.yml">fichero linter-prettier</a>. El fichero ghcr se ha utilizado para publicar un paquete docker en la parte de packages de github, testea el contenedor docker y se publica. El fichero linter-prettier se usa para corregir la sintaxis y el estilo del código con reglas definidas por mí y configuraciones generales.</li>
         <img src="docs/img/travis3.png" alt="float:left" class="center"/>
         Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/herramientas.md">este enlace</a>.
     </blockquote> </dd>
@@ -193,9 +193,9 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         <li>El fichero de test, el cual se encuentra en la carpeta <a href="/test">test</a>, bajo el nombre <a href="/test/util.test.js"><code>util.test.js</code></a>.</li>
         <li>Se ha creado el <a href="/Dockerfile">Dockerfile</a> y <a href="/.dockerignore">.dockerignore</a>.</li>
         <li>Los archivos <code>JSON</code> correspondientes: <a href="/package.json"><code>package.json</code></a> y <a href="/package-lock.json"><code>package-lock.json</code></a>.</li>
-        <li>Se ha configurado el <a href="../.travis.yml">fichero travis</a>, siguiendo las <a href="https://docs.travis-ci.com/user/languages/minimal-and-generic/#minimal">buenas prácticas</a>.</li>
-        <li>Se ha configurado el <a href="../shippable.yml">fichero shippable</a>.</li>
-        <li>Se ha configurado el <a href="../.github/workflows/ghcr.yml">fichero ghcr</a> y el <a href="../.github/workflows/lint-prettier.yml">fichero linter-prettier</a>.</li>
+        <li>Se ha configurado el <a href=".travis.yml">fichero travis</a>, siguiendo las <a href="https://docs.travis-ci.com/user/languages/minimal-and-generic/#minimal">buenas prácticas</a>.</li>
+        <li>Se ha configurado el <a href="shippable.yml">fichero shippable</a>.</li>
+        <li>Se ha configurado el <a href="/.github/workflows/ghcr.yml">fichero ghcr</a> y el <a href="/.github/workflows/lint-prettier.yml">fichero linter-prettier</a>.</li>
     </ul>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </blockquote> </dd>
