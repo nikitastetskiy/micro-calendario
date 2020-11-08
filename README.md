@@ -1,8 +1,9 @@
 # Micro Calendario
 
 > Proyecto que pertenece a la asignatura Infraestructura Virtual (IV).
-
-https://travis-ci.com/nikitastetskiy/micro-calendario.svg?branch=master
+><br></br>
+>[![Build Status](https://travis-ci.com/nikitastetskiy/micro-calendario.svg?branch=master)](https://travis-ci.com/nikitastetskiy/micro-calendario)
+><br></br>
 
 ## Descripción
 
