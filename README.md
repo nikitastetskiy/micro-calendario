@@ -201,7 +201,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 
 -   [Herramientas](/docs/herramientas.md): Herramientas que se hayan implementado en el proyecto, dónde se explicará su debido uso y funcionamiento.
 -   [IV](https://github.com/JJ/IV-20-21): Repositorio de la asignatura Infraestructura Virtual.
--   [GH Pages](https://nikitastetskiy.github.io/micro-calendario/)
+-   [GH Pages](https://nikitastetskiy.github.io/micro-calendario/).
 
 ## Autor
 
