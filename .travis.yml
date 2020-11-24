@@ -1,13 +1,7 @@
 language: minimal
 
-services:
-    - docker
-
-before_install:
-    - docker pull nikitastetskiy/micro-calendario
-
 script:
-    - docker run -t -v `pwd`:/test nikitastetskiy/micro-calendario
+    - docker run -t -v  $TRAVIS_BUILD_DIR:/test nikitastetskiy/micro-calendario
 
 deploy:
     provider: pages
