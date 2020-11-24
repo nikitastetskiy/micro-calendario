@@ -166,7 +166,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
     <dd> <blockquote>
     <ul>
     <br>
-        <li><code>Travis</code>: se ha configurado el <a href=".travis.yml">fichero travis</a>, siguiendo las <a href="https://docs.travis-ci.com/user/languages/minimal-and-generic/#minimal">buenas prácticas</a>, de tal manera que pueda ejecutar los test junto al docker que ya teníamos implementado anteriormente. También se ha añadido una pequeña integración continua en el mismo archivo, el cual hace que se me actualice <a href="https://nikitastetskiy.github.io/micro-calendario/">gh-pages</a> autómaticamente.</li>
+        <li><code>Travis</code>: se ha configurado el <a href=".travis.yml">fichero travis</a>, siguiendo las <a href="https://docs.travis-ci.com/user/languages/minimal-and-generic/#minimal">buenas prácticas</a>, de tal manera que pueda ejecutar los test junto al docker que ya teníamos implementado anteriormente. También se ha añadido una pequeña integración continua en el mismo archivo, esto se realiza mediante <code>deploy</code> y pages, el cual hace que se me actualice <a href="https://nikitastetskiy.github.io/micro-calendario/">gh-pages</a> autómaticamente.</li>
         <img src="docs/img/travis1.png" alt="float:left" class="center"/>
         <li><code>Shippable</code>: se ha configurado el <a href="shippable.yml">fichero shippable</a> de una manera muy parecida a travis, pero ahora en vez de utilizar el docker, se ha utilizado directamente node para comprobar los test.</li>
         <img src="docs/img/travis2.png" alt="float:left" class="center"/>
