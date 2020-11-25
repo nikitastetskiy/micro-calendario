@@ -2,7 +2,15 @@
     "routes": [
         {
             "src": "/",
-            "dest": "/api/calendar.js"
+            "dest": "/api/hello.js"
+        },
+        {
+            "src": "/hello",
+            "methods": [
+                "POST",
+                "GET"
+            ],
+            "dest": "/api/hello.js"
         },
         {
             "src": "/calendar",
