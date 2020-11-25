@@ -5,3 +5,4 @@
 
 # Dependecy - Directorios de dependecias
 node_modules/
+.vercel
