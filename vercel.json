@@ -1,0 +1,16 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/api/calendar.js"
+        },
+        {
+            "src": "/calendar",
+            "methods": [
+                "POST",
+                "GET"
+            ],
+            "dest": "/api/calendar.js"
+        }
+    ]
+} 
