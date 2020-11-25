@@ -94,3 +94,9 @@ docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
 ![](../docs/img/travis3.png)
 
 ---
+
+**Sistemas serverless**:
+
+-   `Vercel`: gracias a este sistema he podido automatizar las funciones serverless. En su [historia de usuario]() podemos ver todos los pasos seguidos para que este sistema funcione correctamente. Aunque para su funcionamiento primero me he creado la cuenta y agregado el repositorio de la asignatura. Luego he inicializado `vercel` en mi repo y he agregado la carpeta [api]() y el archivo [vercel.json]() para la configuración. En la carpeta se encuentran las distintas funciones. El archivo de configuración se ha realizado debido a que sólo quiero que se pueda acceder a las funciones del proyecto y que sólo se use los metodos GET y POST.
+
+![](../docs/img/serverless1.png)
