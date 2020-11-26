@@ -2,7 +2,7 @@ const Planner = require('../src/eventscalendar/planner');
 
 module.exports = async (req, res) => {
     // Usamos try y comprobamos el body por si hay algún error
-    if (req.body.message !== undefined) {
+    if (req.body.message !== undefined || req.body !== undefined) {
         let mensaje = '';
         // Pillamos el body
         const { text } = req.body.message;
