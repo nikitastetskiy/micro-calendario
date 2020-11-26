@@ -39,7 +39,5 @@ module.exports = async (req, res) => {
         } else {
             res.status(200).send('Bot Micro - Calendario');
         }
-    } catch (error) {
-        res.status(200).send('Error function');
-    }
+    } catch (error) {}
 };
