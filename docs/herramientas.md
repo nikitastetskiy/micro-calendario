@@ -97,6 +97,14 @@ docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
 
 **Sistemas serverless**:
 
--   `Vercel`: gracias a este sistema he podido automatizar las funciones serverless. En su [historia de usuario](https://github.com/nikitastetskiy/micro-calendario/issues/19) podemos ver todos los pasos seguidos para que este sistema funcione correctamente. Aunque para su funcionamiento primero me he creado la cuenta y agregado el repositorio de la asignatura. Luego he inicializado `vercel` en mi repo y he agregado la carpeta [api]() y el archivo [vercel.json]() para la configuración. En la carpeta se encuentran las distintas funciones. El archivo de configuración se ha realizado debido a que sólo quiero que se pueda acceder a las funciones del proyecto y que sólo se use los metodos GET y POST.
+-   `Vercel`: gracias a este sistema he podido automatizar las funciones serverless. En su [historia de usuario](https://github.com/nikitastetskiy/micro-calendario/issues/19) podemos ver todos los pasos seguidos para que este sistema funcione correctamente. Para su funcionamiento primero me he creado la cuenta y agregado el repositorio de la asignatura. Luego he inicializado Vercel en mi repo y he agregado la carpeta [api](../api) y el archivo [vercel.json](../vercel.json) para la configuración. En la carpeta se encuentran las distintas funciones. El archivo de configuración se ha realizado debido a que sólo quiero que sean accesibles distintas rutas del proyecto y que sólo se use los metodos GET y POST.
 
 ![](../docs/img/serverless1.png)
+
+Como función serverless, primero he realizado un [Hola Mundo]() el cual también funciona cuando accedemos a la raiz del proyecto. La segunda función devuelve un string en formato JSON con una fecha introducida por el usuario. Aunque la fecha a devolver tendrá un formato diferente al introducido. El archivo [5.json]() contiene lo mismo que si hacemos la [peticion a Vercel]().
+
+![](../docs/img/serverless2.png)
+
+-   `Netlify`:
+
+-   `Telegram bot`: este sistema va a estar compaginado con las funciones implementadas en Vercel. El primer paso es crear el token gracias a Bot Father
