@@ -1,8 +1,9 @@
 const Planner = require('../src/eventscalendar/planner');
 
 module.exports = (req, res) => {
-    // La fecha o el evento será introducido en la url
+    // La fecha o el evento será introducido en la URL
     // fecha por defecto = ''
+    // Entrada URL query parameters (después del ? en la URL)
     const { fecha = '' } = req.query;
     // El resultado que enviaremos finalmente
     let mensaje;
@@ -24,6 +25,8 @@ module.exports = (req, res) => {
         };
         mensaje = JSON.stringify(objetoJSON);
     }
-
+    // Establecemos código de estado estándar (200)
+    // Con res enviamos la función send, esta
+    // contiene un string
     res.status(200).send(mensaje);
 };
