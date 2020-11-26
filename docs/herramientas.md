@@ -101,11 +101,13 @@ docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
 
 ![](../docs/img/serverless1.png)
 
-Como función serverless, primero he realizado un [Hola Mundo](../api/hello.js) el cual también funciona cuando accedemos a la raíz del proyecto. La segunda función devuelve un string en formato JSON con una fecha introducida por el usuario. Aunque la fecha a devolver tendrá un formato diferente al introducido. El archivo [5.json](../5.json) contiene lo mismo que si hacemos la [petición a Vercel](https://micro-calendario.vercel.app/calendar?fecha=1995-12-17T03:24:00 Evento 1). El [código de la segunda función]() está comentado y explicado. 
+Como función serverless, primero he realizado un [Hola Mundo](../api/hello.js) el cual también funciona cuando accedemos a la raíz del proyecto. La segunda función devuelve un string en formato JSON con una fecha introducida por el usuario. Aunque la fecha a devolver tendrá un formato diferente al introducido. El archivo [5.json](../5.json) contiene lo mismo que si hacemos la [petición a Vercel](https://micro-calendario.vercel.app/calendar?fecha=1995-12-17T03:24:00 Evento 1). El [código de la segunda función](../api/calendar.js) está comentado y explicado. 
 
 ![](../docs/img/serverless2.png)
 
--   `Netlify`:
+-   `Netlify`: todo lo correspondiente a la instalación y configuración de Netlify o Vercel se encuentra en el [repo ejercicios-IV](https://github.com/nikitastetskiy/ejercicios-IV/blob/master/tema%205/README.md). Para la implementación de Netlify también me he basado en varias funciones, en este caso template, la primera de ellas es un [Hola Mundo](../functions/hello/hello.js) para poder probar el funcionamiento correcto del intercambio de datos en Netlify. Luego he probado la [funcion Protected](../functions/protected/protected.js), la cual devuelve un JSON con el formato de salida "NOT ALLOWED" en caso de no identificar al usuario. He usado el [redireccionamiento](../netlify.toml) adecuado para esta situación en caso de que se quiera acceder a cualquier otro sitio que no sean las funciones implementadas. Finalmente también he implementado [GraphQL](../functions/graphql/graphql.js), el cual nos facilita la consulta y manipulación de datos. He pensado que sería una opción interesante controlar las peticiones desde el cliente y no del servidor, como pasa en Rest. De esta manera podemos definir lo que pedimos. De momento solo están implementadas unas funciones básicas en las que pedimos un query endpoint Hola Mundo y varios types de *Autores* que ante la petición devuelven un JSON, aunque en un futuro podemos definir esta función para la consulta de eventos por fechas específicas o eventos.
+
+![](../docs/img/serverless4.png)
 
 -   `Telegram bot`: este sistema va a estar compaginado con las funciones implementadas en Vercel. El primer paso es crear el token gracias a Bot Father. El funcionamiento del bot depende de la integración de los webhooks, esta opción es mucho más ventajosa que polling, ya que no estamos constantemente preguntando si hay cambios, sino que la función serverless funcionará cuando se envíe un mensaje. Para integrar el webhook solo tenemos que realizar una petición a esta URL `https://api.telegram.org/botTOKEN_BOTFATHER/setWebHook?url=URL_FUNCTION_VERCEL`. Sustituir TOKEN_BOTFATHER por el token correspondiente y URL_FUNCTION_VERCEL por la URL de la función, que en mi caso es `https://micro-calendario.vercel.app/calendar-bot`.
 Aunque para acceder a las funciones del bot solamente es posible con objetos JSON, por lo que si accedemos la URL nos dará un error. Aunque esto es fácil de arreglar con un if al principio del programa que nos compruebe si existe un body o mensaje en sí. Utilizamos el fórmato JSON porque necesitamos saber el ID del chat para que haya un intercambio de mensajes, también el contenido del mensaje y diversos datos como el nombre o la fecha del mensaje. Un ejemplo de JSON sería:
@@ -137,7 +139,7 @@ Aunque para acceder a las funciones del bot solamente es posible con objetos JSO
 
 ```
 
-Aquí puede ver el funcionamiento del bot y la función. Aunque puede probar el bot en [este enlace]().
+Aquí puede ver el funcionamiento del bot y la función. Aunque puede probar el bot en [este enlace](https://t.me/micl_bot).
 
 ![](../docs/img/serverless3.png)
 
