@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
             if (evento === null || evento === false) {
                 mensaje = `Evento mal introducido.`;
             } else {
-                mensaje = evento.toString();
+                mensaje = `Se ha creado evento en ${evento.toString()}`;
             }
         }
         // Creamos JSON con el mensaje generado
