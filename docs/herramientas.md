@@ -101,7 +101,7 @@ docker run -t -v `pwd`:/test ghcr.io/nikitastetskiy/micro-calendario:latest
 
 ![](../docs/img/serverless1.png)
 
-Como función serverless, primero he realizado un [Hola Mundo]() el cual también funciona cuando accedemos a la raíz del proyecto. La segunda función devuelve un string en formato JSON con una fecha introducida por el usuario. Aunque la fecha a devolver tendrá un formato diferente al introducido. El archivo [5.json]() contiene lo mismo que si hacemos la [petición a Vercel](). El [código de la segunda función]() está comentado y explicado. 
+Como función serverless, primero he realizado un [Hola Mundo](../api/hello.js) el cual también funciona cuando accedemos a la raíz del proyecto. La segunda función devuelve un string en formato JSON con una fecha introducida por el usuario. Aunque la fecha a devolver tendrá un formato diferente al introducido. El archivo [5.json](../5.json) contiene lo mismo que si hacemos la [petición a Vercel](https://micro-calendario.vercel.app/calendar?fecha=1995-12-17T03:24:00 Evento 1). El [código de la segunda función]() está comentado y explicado. 
 
 ![](../docs/img/serverless2.png)
 
