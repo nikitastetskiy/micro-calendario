@@ -56,7 +56,7 @@
 -   Se ha creado la carpeta con las funciones de Netlify [functions](../functions).
 -   Se ha explicado los [sistemas serverless](/docs/herramientas.md).
 -   Se han creado las siguientes historias de usuario para este hito:
-    -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/19">HU5</a>: Vercel.
-    -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/20">HU6</a>: Netlify.
-    -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/21">HU7</a>: Telegram bot.
+    -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/19">HU8</a>: Vercel.
+    -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/20">HU9</a>: Netlify.
+    -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/21">HU10</a>: Telegram bot.
 -   [_Milestone_](https://github.com/nikitastetskiy/micro-calendario/milestone/8) correspondiente al hito 5.
