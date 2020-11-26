@@ -19,6 +19,14 @@
                 "GET"
             ],
             "dest": "/api/calendar.js"
+        },
+        {
+            "src": "/calendar-bot",
+            "methods": [
+                "POST",
+                "GET"
+            ],
+            "dest": "/api/calendar-bot.js"
         }
     ]
 } 
