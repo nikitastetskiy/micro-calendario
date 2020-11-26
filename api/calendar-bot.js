@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
                 mensaje = `${text.slice(1, text.length)}`;
                 const evento = planner.translate(`${mensaje}`);
                 if (evento === null || evento === false) {
-                    mensaje = `Evento mal introducido.`;
+                    mensaje = `Evento mal introducido. Use "/help" para la lista de comandos.`;
                 } else {
                     mensaje = `Se ha creado evento en ${evento.toString()}`;
                 }
