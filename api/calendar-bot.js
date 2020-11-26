@@ -4,16 +4,22 @@ module.exports = async (req, res) => {
     let mensaje = '';
     // Usamos try y comprobamos el body por si hay algún error
     try {
-        if (req.body !== undefined) {
-            // Pillamos el body, el cual contiene el id
-            const body = JSON.parse(req.body);
-            const { chat, text } = body.message;
+        if (req.body.message !== undefined) {
+            // Pillamos el body
+            const { text } = req.body.message;
             // Comprobamos el contenido del mensaje
             if (text && text.charAt(0) === '/') {
                 if (text === '/help') {
                     mensaje = 'Hola !';
                 } else {
-                    mensaje = 'Yikes !';
+                    const planner = new Planner();
+                    mensaje = `${text.slice(1, text.length)}`;
+                    const evento = planner.translate(`${mensaje}`);
+                    if (evento === null || evento === false) {
+                        mensaje = `Evento mal introducido.`;
+                    } else {
+                        mensaje = evento.toString();
+                    }
                 }
                 // Creamos JSON con el mensaje generado
                 // con el id del chat, el metodo de telegram
@@ -22,7 +28,7 @@ module.exports = async (req, res) => {
                 const objetoJSON = {
                     text: mensaje,
                     method: 'sendMessage',
-                    chat_id: chat.id,
+                    chat_id: req.body.message.chat.id,
                 };
                 res.setHeader(
                     'Content-Type',
