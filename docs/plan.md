@@ -48,3 +48,15 @@
     -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/17">HU6</a>: Testing.
     -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/18">HU7</a>: Integración continua.
 -   [_Milestone_](https://github.com/nikitastetskiy/micro-calendario/milestone/7) correspondiente al hito 4.
+
+## [Quinto Hito](http://jj.github.io/IV/documentos/proyecto/5.Serverless): Serverless
+
+-   Se ha configurado el [iv.yaml](../iv.yaml) conforme la URL y el archivo [5.json](../5.json).
+-   Se ha creado la carpeta con las funciones de Vercel [api](../api).
+-   Se ha creado la carpeta con las funciones de Netlify [functions](../functions).
+-   Se ha explicado los [sistemas serverless](/docs/herramientas.md).
+-   Se han creado las siguientes historias de usuario para este hito:
+    -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/19">HU5</a>: Vercel.
+    -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/20">HU6</a>: Netlify.
+    -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/21">HU7</a>: Telegram bot.
+-   [_Milestone_](https://github.com/nikitastetskiy/micro-calendario/milestone/8) correspondiente al hito 5.
