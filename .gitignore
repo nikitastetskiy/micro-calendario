@@ -6,3 +6,6 @@
 # Dependecy - Directorios de dependecias
 node_modules/
 .vercel
+
+# Local Netlify folder
+.netlify
