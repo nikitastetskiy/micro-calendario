@@ -7,8 +7,12 @@ module.exports = async (req, res) => {
         // Pillamos el body
         const { text } = req.body.message;
         // Comprobamos el contenido del mensaje
-        if (text === '/help') {
-            mensaje = 'Hola !';
+        if (text === '/help' || text.charAt(0) !== '/') {
+            mensaje =
+                'Para crear eventos use este formato: "/1995-12-17T03:24:00 Evento 1" ó "/1995-12-17T03:24:00".';
+        } else if (text === '/start') {
+            mensaje =
+                'Hola !\nBot Micro-Calendario a su servicio!\nPara crear eventos use este formato: "/1995-12-17T03:24:00 Evento 1".';
         } else {
             const planner = new Planner();
             mensaje = `${text.slice(1, text.length)}`;
@@ -31,6 +35,6 @@ module.exports = async (req, res) => {
         res.setHeader('Content-Type', 'application/json; charset=utf-8');
         res.status(200).json(objetoJSON);
     } else {
-        res.status(200).send('Bot Micro - Calendario');
+        res.status(200).send('Hola !\nBot Micro-Calendario a su servicio.');
     }
 };
