@@ -23,7 +23,7 @@ module.exports = (req, res) => {
             Fecha: `${evento.fecha.toString()}`,
             Motivo: `${evento.motivo.toString()}`,
         };
-        mensaje = JSON.stringify(objetoJSON);
+        mensaje = objetoJSON;
     }
     // Establecemos código de estado estándar (200)
     // Con res enviamos la función send, esta
