@@ -28,5 +28,5 @@ module.exports = (req, res) => {
     // Establecemos código de estado estándar (200)
     // Con res enviamos la función send, esta
     // contiene un string
-    res.status(200).send(mensaje);
+    res.status(200).json(mensaje);
 };
