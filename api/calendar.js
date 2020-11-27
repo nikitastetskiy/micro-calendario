@@ -28,6 +28,6 @@ module.exports = (req, res) => {
     // Establecemos código de estado estándar (200)
     // Con res enviamos la función send, esta
     // contiene un string
-    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.setHeader('Content-Type', 'application/json');
     res.status(200).json(mensaje);
 };
