@@ -36,9 +36,9 @@ module.exports = async (req, res) => {
             res.setHeader('Content-Type', 'application/json; charset=utf-8');
             res.status(200).json(objetoJSON);
         } else {
-            res.status(200).send('Hola !\nBot Micro-Calendario a su servicio!');
+            res.status(400).send('FIELD_MESSAGE_EMPTY');
         }
     } else {
-        res.status(200).send('Hola !\nBot Micro-Calendario a su servicio.');
+        res.status(400).send('FIELD_BODY_EMPTY');
     }
 };
