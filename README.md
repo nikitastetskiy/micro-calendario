@@ -189,10 +189,10 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         Como función serverless, primero he realizado un <a href="api/hello.js">Hola Mundo</a> el cual también funciona cuando accedemos a la raíz del proyecto. La segunda función devuelve un string en formato JSON con una fecha introducida por el usuario. Aunque la fecha a devolver tendrá un formato diferente al introducido. El archivo <a href="5.json">5.json</a> contiene lo mismo que si hacemos la <a href="https://micro-calendario.vercel.app/calendar?fecha=1995-12-17T03:24:00%20Evento%201">petición a Vercel</a>. El <a href="api/calendar.js">código de la segunda función</a> está comentado y explicado. La <a href="api/calendar-bot.js">tercera función</a> tiene la misma funcionalidad que la segunda, aunque ahora dedicada para Telegram.
         <br></br>
         Los despliegues de vercel se pueden comprobar en estas URLs y en <a href="https://github.com/nikitastetskiy/micro-calendario/commit/dc4e9ac9bd6366f42d68c6f839932e3a0df445c0">este commit</a> como ejemplo:
-        <ul>
-        <li><a href="micro-calendario.nikitastetskiy.vercel.app">micro-calendario.nikitastetskiy.vercel.app</a></li>
-        <li><a href="micro-calendario.vercel.app">micro-calendario.vercel.app</a></li>
-        <li><a href="micro-calendario-git-master.nikitastetskiy.vercel.app">micro-calendario-git-master.nikitastetskiy.vercel.app</a></li>
+        <ul><br></br>
+        <li><a href="https://micro-calendario.nikitastetskiy.vercel.app">micro-calendario.nikitastetskiy.vercel.app</a></li>
+        <li><a href="https://micro-calendario.vercel.app">micro-calendario.vercel.app</a></li>
+        <li><a href="https://micro-calendario-git-master.nikitastetskiy.vercel.app">micro-calendario-git-master.nikitastetskiy.vercel.app</a></li>
         </ul>
         </li>
         <img src="docs/img/serverless2.png" alt="float:left" class="center"/>
