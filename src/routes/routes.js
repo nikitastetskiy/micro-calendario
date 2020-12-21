@@ -2,66 +2,45 @@
 
 'use strict';
 
-const Hapi = require('@hapi/hapi');
+const express = require('express');
+
+const app = express();
 
 const Planner = require('../eventscalendar/planner');
 
 const planner = new Planner();
 
-const server = Hapi.server({
-    port: 3000,
-    host: 'localhost',
-});
-
 // Crea un evento
-
-server.route({
-    method: 'PUT',
-    path: '/eventscalendar',
-    handler: (req, res) => {
-        // La fecha o el evento será introducido en la URL
-        // fecha por defecto = ''
-        // Entrada URL query parameters (después del ? en la URL)
-        const { fecha = '' } = req.query;
-        // El resultado que enviaremos finalmente
-        let mensaje;
-        if (fecha === '') {
-            mensaje = 'Evento mal introducido (vacio).';
-        }
-        // El objeto tipo planner que usaremos para traducir
-        // la fecha introducida por el usuario
-        // Se convierte en tipo evento y hacemos toString
-        const evento = planner.translate(`${fecha}`);
-        if (evento === null || evento === false) {
-            mensaje = `Evento mal introducido.`;
-        } else {
-            planner.addEvent(evento);
-            const objetoJSON = {
-                Fecha: `${evento.fecha.toString()}`,
-                Motivo: `${evento.motivo.toString()}`,
-            };
-            mensaje = objetoJSON;
-        }
-        // Establecemos código de estado estándar (200)
-        // Con res enviamos la función send, esta
-        // contiene un string
-        // res.setHeader('Content-Type', 'application/json');
-        return res.response(mensaje).code(200);
-    },
+app.put('/eventscalendar/', (req, res) => {
+    // La fecha o el evento será introducido en la URL
+    // fecha por defecto = ''
+    // Entrada URL query parameters (después del ? en la URL)
+    const { fecha = '' } = req.query;
+    // El resultado que enviaremos finalmente
+    let mensaje;
+    if (fecha === '') {
+        mensaje = 'Evento mal introducido (vacio).';
+    }
+    // El objeto tipo planner que usaremos para traducir
+    // la fecha introducida por el usuario
+    // Se convierte en tipo evento y hacemos toString
+    const evento = planner.translate(`${fecha}`);
+    if (evento === null || evento === false) {
+        mensaje = `Evento mal introducido.`;
+    } else {
+        planner.addEvent(evento);
+        const objetoJSON = {
+            Fecha: `${evento.fecha.toString()}`,
+            Motivo: `${evento.motivo.toString()}`,
+        };
+        mensaje = objetoJSON;
+    }
+    // Establecemos código de estado estándar (200)
+    // Con res enviamos la función send, esta
+    // contiene un string
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(mensaje);
 });
-
-const init = async () => {
-    await server.start();
-    console.log('Server running on %ss', server.info.uri);
-};
-
-process.on('unhandledRejection', (err) => {
-    console.log(err);
-    process.exit(1);
-});
-
-init();
-
-module.exports = server;
 
 // Exportamos la variable para los tests
+module.exports = app;
