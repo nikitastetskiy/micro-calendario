@@ -61,5 +61,21 @@ app.get('/eventscalendar/', (req, res) => {
     res.status(200).json(mensaje);
 });
 
+app.get('/eventscalendar/:id', (req, res) => {
+    let mensaje = planner.getEvent(req.params.id).toString();
+    if (mensaje === '') {
+        mensaje = `No hay eventos.`;
+    } else {
+        const objetoJSON = {
+            Fecha: `${planner.getEvent(req.params.id).fecha.toString()}`,
+            Motivo: `${planner.getEvent(req.params.id).motivo.toString()}`,
+        };
+        mensaje = objetoJSON;
+    }
+    // Debería hacer un JSON
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(mensaje);
+});
+
 // Exportamos la variable para los tests
 module.exports = app;
