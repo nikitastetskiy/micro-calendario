@@ -27,4 +27,25 @@ describe('Creación de evento y calendario', () => {
                     done();
                 });
         }));
+    it('should return correct type and text of all events - GET', () =>
+        new Promise((done) => {
+            request(app)
+                .get('/eventscalendar/')
+                .expect('Content-Type', /json/)
+                .expect(200, done);
+            request(app)
+                .get('/eventscalendar/')
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((error, mensaje) => {
+                    console.log(mensaje.text);
+                    if (error) {
+                        return done(error);
+                    }
+                    mensaje.text.should.equal(
+                        '{"Fecha":"Sun Dec 17 1995 03:24:00 GMT+0100 (GMT+01:00)","Motivo":"Evento 1"}'
+                    );
+                    done();
+                });
+        }));
 });
