@@ -1,33 +1,30 @@
+/* eslint-disable node/no-unpublished-require */
+/* eslint-disable consistent-return */
 // eslint-disable-next-line node/no-unpublished-require
+
 const request = require('supertest');
-const server = require('../src/routes/routes.js');
+const should = require('should');
+const app = require('../src/routes/routes.js');
 
-// Start application before running the test case
-beforeAll(
-    () =>
+describe('Creación de evento y calendario', () => {
+    it('should return correct type and text - PUT', () =>
         new Promise((done) => {
-            server.events.on('start', () => {
-                done();
-            });
-        })
-);
-
-// Stop application after running the test case
-afterAll(
-    () =>
-        new Promise((done) => {
-            server.events.on('stop', () => {
-                done();
-            });
-            server.stop();
-        })
-);
-
-test('should success with server connection', async () => {
-    const options = {
-        method: 'PUT',
-        url: '/eventscalendar',
-    };
-    const data = await server.inject(options);
-    expect(data.statusCode).toBe(200);
+            request(app)
+                .put('/eventscalendar/')
+                .expect('Content-Type', /json/)
+                .expect(200, done);
+            request(app)
+                .put('/eventscalendar/?fecha=1995-12-17T03:24:00%20Evento%201')
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((error, mensaje) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    mensaje.text.should.equal(
+                        '{"Fecha":"Sun Dec 17 1995 03:24:00 GMT+0100 (GMT+01:00)","Motivo":"Evento 1"}'
+                    );
+                    done();
+                });
+        }));
 });
