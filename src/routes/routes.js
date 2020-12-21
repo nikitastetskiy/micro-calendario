@@ -42,5 +42,24 @@ app.put('/eventscalendar/', (req, res) => {
     res.status(200).json(mensaje);
 });
 
+app.get('/eventscalendar/', (req, res) => {
+    let mensaje = planner.toString();
+    if (mensaje === '') {
+        mensaje = `No hay eventos.`;
+    } else {
+        let objetoJSON;
+        for (let i = 0; i < planner.evento.length; i++) {
+            objetoJSON += {
+                Fecha: `${planner.getEvent(i).fecha.toString()}`,
+                Motivo: `${planner.getEvent(i).motivo.toString()}`,
+            };
+        }
+        mensaje = objetoJSON;
+    }
+    // Debería hacer un JSON
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(mensaje);
+});
+
 // Exportamos la variable para los tests
 module.exports = app;
