@@ -3,6 +3,7 @@
 'use strict';
 
 const express = require('express');
+const logger = require('./logs/logger.js');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.put('/eventscalendar/', (req, res) => {
     // Establecemos código de estado estándar (200)
     // Con res enviamos la función send, esta
     // contiene un string
+    logger.info('Evento creado - [PUT]');
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(mensaje);
 });
@@ -57,6 +59,7 @@ app.get('/eventscalendar/', (req, res) => {
         mensaje = objetoJSON;
     }
     // Debería hacer un JSON
+    logger.info('Eventos Multiples cargados - [GET]');
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(mensaje);
 });
@@ -73,6 +76,7 @@ app.get('/eventscalendar/:id', (req, res) => {
         mensaje = objetoJSON;
     }
     // Debería hacer un JSON
+    logger.info('Evento Especifíco cargado - [GET]');
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(mensaje);
 });
