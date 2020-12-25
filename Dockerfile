@@ -9,6 +9,8 @@ LABEL maintainer "Nikita Stetskiy <nikin929@gmail.com>"  \
 RUN addgroup -S node && adduser -S node -G node \
     && apk add --no-cache --update nodejs-dev=12.18.4-r0 npm=12.18.4-r0 \
     && npm i -g jest ts-jest \
+    && npm i -g supertest \
+    && npm i -g should \
     && mkdir /app && chown node:node /app
 WORKDIR /app 
 RUN mkdir /node_modules && chown node:node /node_modules
