@@ -32,9 +32,9 @@ describe('Creación de evento y calendario', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (error, mensaje) {
-                // if (error) {
-                //     return done(error);
-                // }
+                if (error) {
+                    return done(error);
+                }
                 mensaje.text.should.equal(
                     '{"Fecha":"Sun Dec 17 1995 03:24:00 GMT+0100 (GMT+01:00)","Motivo":"Evento 1"}'
                 );
