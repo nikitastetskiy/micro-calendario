@@ -234,6 +234,26 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 
 </details>
 
+<details><summary><b>Sistemas serverless</b></summary>
+
+<dl>
+    <dd> <blockquote>
+        <p>He realizado varias comparaciones, pero finalmente me he decidido por Express.js. Para nuestra aplicación he realizado algunos <em>testeos</em> con varios frameworks sobre las propias funciones de la aplicación y no un Hola Mundo, incluidos Hapi (<a href="https://github.com/nikitastetskiy/micro-calendario/commit/5de2d8a98972f1549e300e3e525e54b95bfa5834">commit correspondiente de la prueba</a> y <a href="https://github.com/nikitastetskiy/micro-calendario/commit/5f0552c52ca1db28a39508c119b04723a6ec4b1e">commit correspondiente del test</a>) y Express (<a href="https://github.com/nikitastetskiy/micro-calendario/commit/0266d30e9517b7d8720bed53be0c531bd364d4af">commit correspondiente de la prueba</a> y <a href="https://github.com/nikitastetskiy/micro-calendario/commit/448809af34f99ddaa924bb46dc98d27e91a1cb88">commit correspondiente del test</a>). Ambos frameworks son bastante rápidos (los test han tenido solamente 1 segundo de diferencia) y cumplen con su funcionalidad. Ahora bien, he elegido Express porque después de realizar el mismo test numerosas veces daba mejores resultados que Hapi, esto es posible a que Express guarde en la caché distintas operaciones que hagamos para no tener que repetirlas. Para nuestra aplicación es un factor clave.</p>
+        <p>Otro factor es que Express utiliza middleware para proporcionar acceso a la canalización de solicitudes / respuestas, es decir, acceso a los objetos de solicitud / respuesta req y res de Node. Una aplicación Express &quot;encadena&quot; el middleware para actuar sobre solicitudes y respuestas. Cada componente de middleware tiene un trabajo único y bien definido que hacer, manteniendo las preocupaciones aisladas dentro de cada componente. Hapi, por el contrario, usa plugins para ampliar sus capacidades. Los plugins se configuran en tiempo de ejecución mediante código. Existen plugins que cumplen con las funciones de middleware aunque los middlewares están diseñados generalmente para hacer cosas como verificar la autenticación entre páginas y los plugins para importar y configurar bibliotecas. Además Hapi generalmente se usa en proyectos más grandes y express para más pequeños, como este. Esto es debido por temas de escalabilidad.</p>
+        <ul>
+        <li>Se ha configurado un <strong>GET</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/4">HU1: Consulta de eventos</a>.</li>
+        <li>Se ha configurado un <strong>GET</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/5">HU2: Consulta específica de eventos</a>.</li>
+        <li>Se ha configurado un <strong>PUT</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/6">HU3: Creación de eventos</a>.</li>
+        </ul>
+        <p>Todas las rutas se han configurado en <a href=".././src/routes/routes.js">este archivo</a>. Los test correspondientes en <a href=".././test/routes.test.js">este archivo</a>.</p>
+        <p>Siguiendo las buenas prácticas, he tomado como referencia la <a href="https://expressjs.com/es/advanced/best-practice-performance.html">página de Express</a>, por lo que para la realización de un registro correcto o logs he usado winston. Ya que el uso de console.log() o console.err() son funciones síncronas cuando canalizan a un terminal o un archivo, por lo que no son adecuadas para producción, a menos que canalice la salida a otro programa. Winston es una biblioteca de registro simple y universal con soporte para múltiples <em>transportes</em>. Esto es lo que más me ha llamado la atención, ya que un transporte es esencialmente un dispositivo de almacenamiento. Cada instancia de un registrador Winston puede tener varios <em>transportes</em> configurados en diferentes niveles de registro. Winston se ha configurado en <a href=".././src/routes/logs/logger.js">este archivo</a>.</p>
+        <p>Se ha utilizado middleware gracias a Express. Las funciones de middleware son funciones que tienen acceso al objeto de solicitud (req), al objeto de respuesta (res) y a la siguiente función de middleware en el ciclo de solicitud/respuestas de la aplicación. Se ha usado en el enlace del middleware de nivel de aplicación a una instancia del objeto de aplicación utilizando las funciones app.use() y app.METHOD(), donde METHOD es el método HTTP de la solicitud que maneja la función de middleware (por ejemplo, GET, PUT o POST) en minúsculas.</p>
+        Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/herramientas.md">este enlace</a>.
+    </blockquote> </dd>
+</dl>
+
+</details>
+
 <details><summary><b>Enlaces a códigos y clases</b></summary>
 
 <dl>
