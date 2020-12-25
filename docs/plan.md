@@ -60,3 +60,10 @@
     -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/20">HU9</a>: Netlify.
     -   <a href="https://github.com/nikitastetskiy/micro-calendario/issues/21">NO-HU</a>: Telegram bot.
 -   [_Milestone_](https://github.com/nikitastetskiy/micro-calendario/milestone/8) correspondiente al hito 5.
+
+## [Sexto Hito](http://jj.github.io/IV/documentos/proyecto/6.Microservicio): Diseño y test de un microservicio
+
+- Se ha configurado un **GET** para [HU1: Consulta de eventos](https://github.com/nikitastetskiy/micro-calendario/issues/4).
+- Se ha configurado un **GET** para [HU2: Consulta específica de eventos](https://github.com/nikitastetskiy/micro-calendario/issues/5).
+- Se ha configurado un **PUT** para [HU3: Creación de eventos](https://github.com/nikitastetskiy/micro-calendario/issues/6).
+- Todas las rutas se han configurado en [este archivo](../src/routes/routes.js). Los test correspondientes en [este archivo](../test/routes.test.js).

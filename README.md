@@ -245,10 +245,11 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         <li>Se ha configurado un <strong>GET</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/5">HU2: Consulta específica de eventos</a>.</li>
         <li>Se ha configurado un <strong>PUT</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/6">HU3: Creación de eventos</a>.</li>
         </ul>
-        <p>Todas las rutas se han configurado en <a href=".././src/routes/routes.js">este archivo</a>. Los test correspondientes en <a href=".././test/routes.test.js">este archivo</a>.</p>
-        <p>Siguiendo las buenas prácticas, he tomado como referencia la <a href="https://expressjs.com/es/advanced/best-practice-performance.html">página de Express</a>, por lo que para la realización de un registro correcto o logs he usado winston. Ya que el uso de console.log() o console.err() son funciones síncronas cuando canalizan a un terminal o un archivo, por lo que no son adecuadas para producción, a menos que canalice la salida a otro programa. Winston es una biblioteca de registro simple y universal con soporte para múltiples <em>transportes</em>. Esto es lo que más me ha llamado la atención, ya que un transporte es esencialmente un dispositivo de almacenamiento. Cada instancia de un registrador Winston puede tener varios <em>transportes</em> configurados en diferentes niveles de registro. Winston se ha configurado en <a href=".././src/routes/logs/logger.js">este archivo</a>.</p>
+        <p>Todas las rutas se han configurado en <a href="src/routes/routes.js">este archivo</a>. Los test correspondientes en <a href="test/routes.test.js">este archivo</a>.</p>
+        <p>Siguiendo las buenas prácticas, he tomado como referencia la <a href="https://expressjs.com/es/advanced/best-practice-performance.html">página de Express</a>, por lo que para la realización de un registro correcto o logs he usado winston. Ya que el uso de console.log() o console.err() son funciones síncronas cuando canalizan a un terminal o un archivo, por lo que no son adecuadas para producción, a menos que canalice la salida a otro programa. Winston es una biblioteca de registro simple y universal con soporte para múltiples <em>transportes</em>. Esto es lo que más me ha llamado la atención, ya que un transporte es esencialmente un dispositivo de almacenamiento. Cada instancia de un registrador Winston puede tener varios <em>transportes</em> configurados en diferentes niveles de registro. Winston se ha configurado en <a href="src/routes/logs/logger.js">este archivo</a>.</p>
         <p>Se ha utilizado middleware gracias a Express. Las funciones de middleware son funciones que tienen acceso al objeto de solicitud (req), al objeto de respuesta (res) y a la siguiente función de middleware en el ciclo de solicitud/respuestas de la aplicación. Se ha usado en el enlace del middleware de nivel de aplicación a una instancia del objeto de aplicación utilizando las funciones app.use() y app.METHOD(), donde METHOD es el método HTTP de la solicitud que maneja la función de middleware (por ejemplo, GET, PUT o POST) en minúsculas.</p>
-        Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/herramientas.md">este enlace</a>.
+        <p>También se ha configurado Docker para que los test de las rutas funcionen también en Travis y Shippable. Aquí el <a href="https://github.com/nikitastetskiy/micro-calendario/issues/24">issue correspondiente</a>.</p>
+        <p>Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/herramientas.md">este enlace</a>.</p>
     </blockquote> </dd>
 </dl>
 
@@ -275,6 +276,10 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         <li>Se ha configurado el <a href="iv.yaml">iv.yaml</a> conforme la URL y el archivo <a href="5.json">5.json</a>.</li>
         <li>Se ha creado la carpeta con las funciones de Vercel <a href="api">api</a>.</li>
         <li>Se ha creado la carpeta con las funciones de Netlify <a href="functions">functions</a>.</li>
+        <li>Se ha configurado un <strong>GET</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/4">HU1: Consulta de eventos</a>.</li>
+        <li>Se ha configurado un <strong>GET</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/5">HU2: Consulta específica de eventos</a>.</li>
+        <li>Se ha configurado un <strong>PUT</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/6">HU3: Creación de eventos</a>.</li>
+        <li>Todas las rutas se han configurado en <a href="src/routes/routes.js">este archivo</a>. Los test correspondientes en <a href="test/routes.test.js">este archivo</a>.</li>
     </ul>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
     </blockquote> </dd>
@@ -303,7 +308,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
                 <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/18">HU7</a>: Integración continua.</li>
                 <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/19">HU8</a>: Vercel.</li>
                 <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/20">HU9</a>: Netlify.</li>
-                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/21">HU10</a>: Telegram bot.</li>
+                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/21">NO-HU</a>: Telegram bot.</li>
             </ul>
     </ul>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
