@@ -10,6 +10,10 @@ class planner {
         throw new Error('Fuera de rango');
     }
 
+    getEventLength() {
+        return this.eventos.length;
+    }
+
     addEvent(evento) {
         if (evento == null || evento === false)
             throw new Error('Mal declarado el evento');
@@ -71,7 +75,7 @@ class planner {
 
     toString() {
         let secuencia = '';
-        for (let i = 0; i < this.eventos.length; i++) {
+        for (let i = 0; i < this.getEventLength(); i++) {
             secuencia += `${this.getEvent(i).toString()}\n`;
         }
         return secuencia;
