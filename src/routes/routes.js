@@ -21,7 +21,7 @@ app.put('/eventscalendar/', (req, res) => {
     let mensaje;
     if (fecha === '') {
         mensaje = 'Evento mal introducido (vacio).';
-        logger.info('Evento creado \t- [PUT] \t- ERROR 404');
+        logger.info('Evento creado \t\t\t\t\t\t- [PUT] \t\t\t\t- ERROR 404');
         res.setHeader('Content-Type', 'application/json');
         res.status(404).json(mensaje);
     }
@@ -43,7 +43,7 @@ app.put('/eventscalendar/', (req, res) => {
         // Establecemos código de estado estándar (200)
         // Con res enviamos la función send, esta
         // contiene un string
-        logger.info('Evento creado \t- [PUT]');
+        logger.info('Evento creado \t\t\t\t\t\t- [PUT]');
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(mensaje);
     }
@@ -54,7 +54,9 @@ app.get('/eventscalendar/', (req, res) => {
     if (mensaje === '') {
         mensaje = `No hay eventos.`;
         // Debería hacer un JSON
-        logger.info('Eventos Multiples cargados \t- [GET] \t- ERROR 404');
+        logger.info(
+            'Eventos Multiples cargados \t\t- [GET] \t\t\t\t- ERROR 404'
+        );
         res.setHeader('Content-Type', 'application/json');
         res.status(404).json(mensaje);
     } else {
@@ -71,7 +73,7 @@ app.get('/eventscalendar/', (req, res) => {
         objetoJSON = JSON.parse(stringJSON);
         mensaje = objetoJSON;
         // Debería hacer un JSON
-        logger.info('Eventos Multiples cargados \t- [GET]');
+        logger.info('Eventos Multiples cargados \t\t- [GET]');
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(mensaje);
     }
@@ -82,7 +84,9 @@ app.get('/eventscalendar/:id', (req, res) => {
     if (mensaje === '') {
         mensaje = `No hay eventos.`;
         // Debería hacer un JSON
-        logger.info('Evento Especifíco cargado \t- [GET] \t- ERROR 404');
+        logger.info(
+            'Evento Especifíco cargado \t\t\t- [GET] \t\t\t\t- ERROR 404'
+        );
         res.setHeader('Content-Type', 'application/json');
         res.status(404).json(mensaje);
     } else {
@@ -92,7 +96,7 @@ app.get('/eventscalendar/:id', (req, res) => {
         };
         mensaje = objetoJSON;
         // Debería hacer un JSON
-        logger.info('Evento Especifíco cargado \t- [GET]');
+        logger.info('Evento Especifíco cargado \t\t\t- [GET]');
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(mensaje);
     }
