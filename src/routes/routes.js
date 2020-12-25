@@ -81,17 +81,21 @@ app.get('/eventscalendar/:id', (req, res) => {
     let mensaje = planner.getEvent(req.params.id).toString();
     if (mensaje === '') {
         mensaje = `No hay eventos.`;
+        // Debería hacer un JSON
+        logger.info('Evento Especifíco cargado \t- [GET] \t- ERROR 404');
+        res.setHeader('Content-Type', 'application/json');
+        res.status(404).json(mensaje);
     } else {
         const objetoJSON = {
             Fecha: `${planner.getEvent(req.params.id).fecha.toString()}`,
             Motivo: `${planner.getEvent(req.params.id).motivo.toString()}`,
         };
         mensaje = objetoJSON;
+        // Debería hacer un JSON
+        logger.info('Evento Especifíco cargado \t- [GET]');
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(mensaje);
     }
-    // Debería hacer un JSON
-    logger.info('Evento creado - test');
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(mensaje);
 });
 
 // Exportamos la variable para los tests
