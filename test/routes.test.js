@@ -10,6 +10,12 @@ const should = require('should');
 const app = require('../src/routes/routes.js');
 
 describe('Creación de evento y calendario', function () {
+    it('should return error 404 type and text of 1 event - GET', function (done) {
+        request(app)
+            .get('/eventscalendar/0')
+            .expect('Content-Type', /json/)
+            .expect(404, done);
+    });
     it('should return correct type and text - PUT', function (done) {
         request(app)
             .put('/eventscalendar/')
