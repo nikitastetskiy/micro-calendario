@@ -21,27 +21,32 @@ app.put('/eventscalendar/', (req, res) => {
     let mensaje;
     if (fecha === '') {
         mensaje = 'Evento mal introducido (vacio).';
+        logger.info('Evento creado \t- [PUT] \t- ERROR 404');
+        res.setHeader('Content-Type', 'application/json');
+        res.status(404).json(mensaje);
     }
     // El objeto tipo planner que usaremos para traducir
     // la fecha introducida por el usuario
     // Se convierte en tipo evento y hacemos toString
-    const evento = planner.translate(`${fecha}`);
-    if (evento === null || evento === false) {
-        mensaje = `Evento mal introducido.`;
-    } else {
-        planner.addEvent(evento);
-        const objetoJSON = {
-            Fecha: `${evento.fecha.toString()}`,
-            Motivo: `${evento.motivo.toString()}`,
-        };
-        mensaje = objetoJSON;
+    else {
+        const evento = planner.translate(`${fecha}`);
+        if (evento === null || evento === false) {
+            mensaje = `Evento mal introducido.`;
+        } else {
+            planner.addEvent(evento);
+            const objetoJSON = {
+                Fecha: `${evento.fecha.toString()}`,
+                Motivo: `${evento.motivo.toString()}`,
+            };
+            mensaje = objetoJSON;
+        }
+        // Establecemos código de estado estándar (200)
+        // Con res enviamos la función send, esta
+        // contiene un string
+        logger.info('Evento creado \t- [PUT]');
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(mensaje);
     }
-    // Establecemos código de estado estándar (200)
-    // Con res enviamos la función send, esta
-    // contiene un string
-    logger.info('Evento creado - [PUT]');
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(mensaje);
 });
 
 app.get('/eventscalendar/', (req, res) => {
@@ -59,7 +64,6 @@ app.get('/eventscalendar/', (req, res) => {
         mensaje = objetoJSON;
     }
     // Debería hacer un JSON
-    logger.info('Eventos Multiples cargados - [GET]');
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(mensaje);
 });
@@ -76,7 +80,7 @@ app.get('/eventscalendar/:id', (req, res) => {
         mensaje = objetoJSON;
     }
     // Debería hacer un JSON
-    logger.info('Evento Especifíco cargado - [GET]');
+    logger.info('Evento creado - test');
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(mensaje);
 });
