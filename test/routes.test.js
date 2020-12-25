@@ -16,6 +16,12 @@ describe('Creación de evento y calendario', function () {
             .expect('Content-Type', /json/)
             .expect(404, done);
     });
+    it('should return error 404 type and text of all events - GET', function (done) {
+        request(app)
+            .get('/eventscalendar/')
+            .expect('Content-Type', /json/)
+            .expect(404, done);
+    });
     it('should return correct type and text - PUT', function (done) {
         request(app)
             .put('/eventscalendar/')
