@@ -234,7 +234,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 
 </details>
 
-<details><summary><b>Sistemas serverless</b></summary>
+<details><summary><b>Diseño y test de un microservicio</b></summary>
 
 <dl>
     <dd> <blockquote>
