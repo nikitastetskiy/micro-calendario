@@ -53,19 +53,28 @@ app.get('/eventscalendar/', (req, res) => {
     let mensaje = planner.toString();
     if (mensaje === '') {
         mensaje = `No hay eventos.`;
+        // Debería hacer un JSON
+        logger.info('Eventos Multiples cargados \t- [GET] \t- ERROR 404');
+        res.setHeader('Content-Type', 'application/json');
+        res.status(404).json(mensaje);
     } else {
-        let objetoJSON;
-        for (let i = 0; i < planner.evento.length; i++) {
-            objetoJSON += {
-                Fecha: `${planner.getEvent(i).fecha.toString()}`,
-                Motivo: `${planner.getEvent(i).motivo.toString()}`,
-            };
+        // eslint-disable-next-line prefer-const
+        let objetoJSON = {};
+        let stringJSON = '';
+        for (let i = 0; i < planner.getEventLength(); i++) {
+            stringJSON +=
+                `{ "id": ${i}, "Fecha": "${planner
+                    .getEvent(i)
+                    .fecha.toString()}"` +
+                `, "Motivo": "${planner.getEvent(i).motivo.toString()}" }`;
         }
+        objetoJSON = JSON.parse(stringJSON);
         mensaje = objetoJSON;
+        // Debería hacer un JSON
+        logger.info('Eventos Multiples cargados \t- [GET]');
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(mensaje);
     }
-    // Debería hacer un JSON
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(mensaje);
 });
 
 app.get('/eventscalendar/:id', (req, res) => {
