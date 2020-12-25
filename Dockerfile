@@ -8,7 +8,6 @@ LABEL maintainer "Nikita Stetskiy <nikin929@gmail.com>"  \
     version = "1.0.0"
 RUN addgroup -S node && adduser -S node -G node \
     && apk add --no-cache --update nodejs-dev=12.18.4-r0 npm=12.18.4-r0 \
-    && npm i -g jest ts-jest supertest should body-parser express\
     && mkdir /app && chown node:node /app && chmod 755 /app
 WORKDIR /app 
 RUN mkdir /node_modules && chown node:node /node_modules && chmod 755 /node_modules
