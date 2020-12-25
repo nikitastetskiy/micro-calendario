@@ -7,7 +7,14 @@
 const request = require('supertest');
 // eslint-disable-next-line no-unused-vars
 const should = require('should');
+const Events = require('../src/eventscalendar/events');
 const app = require('../src/routes/routes.js');
+
+const event = new Events(new Date('1995-12-17T03:24:00'), 'Evento 1');
+
+const stringJSON =
+    `{"Fecha":"${event.fecha.toString()}"` +
+    `,"Motivo":"${event.motivo.toString()}"}`;
 
 describe('Creación de evento y calendario', function () {
     it('should return error 404 type and text of 1 event - GET', function (done) {
@@ -35,9 +42,7 @@ describe('Creación de evento y calendario', function () {
                 if (error) {
                     return done(error);
                 }
-                mensaje.text.should.equal(
-                    '{"Fecha":"Sun Dec 17 1995 03:24:00 GMT+0100 (GMT+01:00)","Motivo":"Evento 1"}'
-                );
+                mensaje.text.should.equal(stringJSON);
                 done();
             });
     });
@@ -55,7 +60,8 @@ describe('Creación de evento y calendario', function () {
                     return done(error);
                 }
                 mensaje.text.should.equal(
-                    '{"id":0,"Fecha":"Sun Dec 17 1995 03:24:00 GMT+0100 (GMT+01:00)","Motivo":"Evento 1"}'
+                    `{"id":0,"Fecha":"${event.fecha.toString()}"` +
+                        `,"Motivo":"${event.motivo.toString()}"}`
                 );
                 done();
             });
@@ -74,9 +80,7 @@ describe('Creación de evento y calendario', function () {
                 if (error) {
                     return done(error);
                 }
-                mensaje.text.should.equal(
-                    '{"Fecha":"Sun Dec 17 1995 03:24:00 GMT+0100 (GMT+01:00)","Motivo":"Evento 1"}'
-                );
+                mensaje.text.should.equal(stringJSON);
                 done();
             });
     });
