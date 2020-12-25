@@ -80,7 +80,10 @@ app.get('/eventscalendar/', (req, res) => {
 });
 
 app.get('/eventscalendar/:id', (req, res) => {
-    let mensaje = planner.getEvent(req.params.id).toString();
+    let mensaje = '';
+    if (planner.getEventLength() > req.params.id) {
+        mensaje = planner.getEvent(req.params.id).toString();
+    }
     if (mensaje === '') {
         mensaje = `No hay eventos.`;
         // Debería hacer un JSON
