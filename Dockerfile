@@ -29,7 +29,7 @@ RUN npm i --silent --progress=false --no-optional  \
 # los archivos necesarios y montar el
 # volumen correspondiente
 FROM base AS test
-COPY --from=dev /app/node_modules /app/node_modules
+COPY --from=dev /app/node_modules /test/node_modules
 VOLUME ["/test"]
 WORKDIR /test
 ENV PATH=/node_modules/.bin:$PATH
