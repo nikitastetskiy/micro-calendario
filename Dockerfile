@@ -20,7 +20,7 @@ USER node
 # optimización de memoria
 FROM base AS dev
 COPY --chown=node:node package.json package-lock.json ./
-RUN npm ci --silent --progress=false --no-optional  \
+RUN npm i --silent --progress=false --no-optional  \
     && npm cache clean --force \
     && rm package*.json 
 
