@@ -1,7 +1,7 @@
 # Usamos node, usuario sin privilegios
 # Definimos Autor y datos del proyecto
 # Declaramos app y node_modules como 
-# propietarios de node
+# propietarios de node (primero root)
 FROM alpine:latest AS base
 LABEL maintainer "Nikita Stetskiy <nikin929@gmail.com>"  \
     name = "micro-calendario"     \
