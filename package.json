@@ -45,6 +45,7 @@
     "braces": "^3.0.2",
     "express": "^4.17.1",
     "graphql": "^15.4.0",
+    "grunt-run": "^0.8.1",
     "winston": "^3.3.3"
   }
 }
