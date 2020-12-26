@@ -34,7 +34,7 @@ RUN addgroup -S node && adduser -S node -G node \
 # ENV PATH=/node_modules/.bin:$PATH
 # CMD ["npm", "test"]
 
-RUN npm i -g jest ts-jest supertest should body-parser express \
+RUN npm i -g jest ts-jest supertest should body-parser express grunt-cli grunt grunt-run \
     && mkdir /node_modules && chmod 755 /node_modules && chown node /node_modules
 
 USER node
