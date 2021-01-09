@@ -3,16 +3,16 @@ const express = require('express');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const TELEGRAM_API_TOKEN = process.env.TELEGRAM_API_TOKEN || '';
-
-app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
+const User = require('/models/user');
 
 app.use(bodyParser.json());
+
+app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
 
 app.post('/webhooks/telegram', (req, res) => {
     console.log(req.body);
 
-    res.send({status: 'ok'});
+    res.send({ status: 'ok' });
 });
 
 app.listen(port, () =>
