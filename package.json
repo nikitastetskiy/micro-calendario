@@ -41,15 +41,18 @@
     "supertest": "^6.0.1"
   },
   "dependencies": {
-    "@hapi/hapi": "^20.0.3",
     "apollo-server-lambda": "^2.19.0",
     "body-parser": "^1.19.0",
     "braces": "^3.0.2",
     "express": "^4.17.1",
     "graphql": "^15.4.0",
     "grunt-run": "^0.8.1",
+    "js-levenshtein": "^1.1.6",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
+    "sequelize": "^6.3.5",
     "winston": "^3.3.3"
   }
 }
