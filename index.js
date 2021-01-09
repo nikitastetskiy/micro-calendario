@@ -15,7 +15,7 @@ app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
 app.post('/webhooks/telegram', (req, res) => {
     console.log(req.body);
     const user = User.createFromRequest(req.body)[0];
-    console.log(user.conversationId);
+    // console.log(user.conversationId);
     const objetoJSON = {
         text: 'Hola',
         method: 'sendMessage',
