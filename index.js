@@ -5,7 +5,7 @@ const User = require('./models/user');
 
 const app = express();
 
-require('./models/sequelize');
+require('./models/database');
 
 const port = process.env.PORT || 3000;
 
