@@ -47,18 +47,18 @@ app.post('/webhooks/telegram', async (req, res) => {
                             'user.telegramId': req.body.message.from.id.toString(),
                         })
                     ) {
-                        user = db.find({
+                        user = await db.find({
                             'user.telegramId': req.body.message.from.id.toString(),
                         });
                     } else {
-                        user = new User();
+                        user = await new User();
                     }
                     console.log(req.body.message.from.id.toString());
                     user.telegramId = req.body.message.from.id.toString();
                     user.conversationId = req.body.message.chat.id;
-                    user.evento.fecha = evento.fecha;
-                    user.evento.motivo = evento.motivo.toString();
-                    user.save();
+                    user.evento.fecha = evento.getFecha();
+                    user.evento.motivo = evento.getMotivo().toString();
+                    await user.save();
                     console.log(user.evento.fecha);
                     mensaje = `Se ha creado evento en ${evento.toString()}`;
                 }
