@@ -51,11 +51,13 @@ app.post('/webhooks/telegram', async (req, res) => {
                     } else {
                         user = new User();
                     }
+                    console.log(req.body.message.from.id.toString());
                     user.telegramId = req.body.message.from.id.toString();
                     user.conversationId = req.body.message.chat.id;
                     user.evento.fecha = evento.fecha;
                     user.evento.motivo = evento.motivo.toString();
                     user.save();
+                    console.log(user.evento.fecha);
                     mensaje = `Se ha creado evento en ${evento.toString()}`;
                 }
             }
