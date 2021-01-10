@@ -5,7 +5,9 @@ const User = require('./models/user');
 
 const app = express();
 
-const db = require('./models/database');
+require('./models/database');
+
+const db = require('./models/user');
 
 const port = process.env.PORT || 3000;
 
