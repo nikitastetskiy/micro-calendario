@@ -1,4 +1,4 @@
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const express = require('express');
 const Planner = require('./src/eventscalendar/planner');
 const User = require('./models/user');
@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 
 // [User].map((model) => model.sync({ force: false }));
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
 
