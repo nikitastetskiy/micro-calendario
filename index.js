@@ -1,22 +1,42 @@
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const express = require('express');
 const Planner = require('./src/eventscalendar/planner');
 const User = require('./models/user');
 
 const app = express();
+
+require('./models/sequelize');
+
 const port = process.env.PORT || 3000;
 
-[User].map((model) => model.sync({ force: false }));
+// [User].map((model) => model.sync({ force: false }));
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
 
 app.post('/webhooks/telegram', async (req, res) => {
     if (req.body !== undefined) {
         if (req.body.message !== undefined) {
+            // INICIO
+
+            console.log('POST /api/user');
             console.log(req.body);
-            const user = (await User.createFromRequest(req.body))[0];
+
+            const user = new User();
+            user.telegramId = req.body.name;
+            user.conversationId = req.body.picture;
+
+            user.save((err, userStored) => {
+                if (err)
+                    res.status(500).send({
+                        message: `Error al salvar en la base de datos: ${err} `,
+                    });
+
+                res.status(200).send({ user: userStored });
+            });
+
+            // FIN
             console.log(user.conversationId);
             let mensaje = '';
             // Pillamos el body

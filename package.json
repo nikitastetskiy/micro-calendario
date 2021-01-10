@@ -48,6 +48,8 @@
     "graphql": "^15.4.0",
     "grunt-run": "^0.8.1",
     "js-levenshtein": "^1.1.6",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.11",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "request": "^2.88.2",

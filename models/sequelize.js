@@ -1,14 +1,8 @@
-const { Sequelize } = require('sequelize');
+const mongoose = require('mongoose');
 
-const sequelize = process.env.DATABASE_URL
-    ? new Sequelize(process.env.DATABASE_URL, {
-          dialect: 'postgres',
-          logging: false,
-      })
-    : new Sequelize('db', 'telegram', 'postgres', '', {
-          dialect: 'postgres',
-          host: 'db',
-          logging: false,
-      });
-
-module.exports = sequelize;
+mongoose
+    .connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+    })
+    .then((db) => console.log(`DB is connected`))
+    .catch((err) => console.error(err));
