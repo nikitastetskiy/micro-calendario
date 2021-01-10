@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 
 const db = process.env.MONGODB_URI;
 
-const collection = db.db('Micro-Calendario').collection('Telegram');
+const collection = db('Micro-Calendario').collection('Telegram');
 
 app.use(bodyParser.json());
 
