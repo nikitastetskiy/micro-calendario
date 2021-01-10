@@ -18,19 +18,17 @@ app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
 app.post('/webhooks/telegram', async (req, res) => {
     if (req.body !== undefined) {
         if (req.body.message !== undefined) {
-            // INICIO
 
             console.log('POST /api/user');
             console.log(req.body);
 
-            const user = new User();
-            user.telegramId = req.body.name;
-            user.conversationId = req.body.picture;
+            // const user = new User();
+            // user.telegramId = req.body.name;
+            // user.conversationId = req.body.picture;
 
-            user.save();
+            // user.save();
 
-            // FIN
-            console.log(user.conversationId);
+            // console.log(user.conversationId);
             let mensaje = '';
             // Pillamos el body
             const { text } = req.body.message;
