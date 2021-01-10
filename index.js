@@ -27,14 +27,7 @@ app.post('/webhooks/telegram', async (req, res) => {
             user.telegramId = req.body.name;
             user.conversationId = req.body.picture;
 
-            user.save((err, userStored) => {
-                if (err)
-                    res.status(500).send({
-                        message: `Error al salvar en la base de datos: ${err} `,
-                    });
-
-                res.status(200).send({ user: userStored });
-            });
+            user.save();
 
             // FIN
             console.log(user.conversationId);
