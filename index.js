@@ -9,7 +9,7 @@ require('./models/database');
 
 const port = process.env.PORT || 3000;
 
-// [User].map((model) => model.sync({ force: false }));
+const db = process.env.MONGODB_URI;
 
 app.use(bodyParser.json());
 
@@ -18,17 +18,10 @@ app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
 app.post('/webhooks/telegram', async (req, res) => {
     if (req.body !== undefined) {
         if (req.body.message !== undefined) {
+            // console.log('POST /api/user');
+            // console.log(req.body);
 
-            console.log('POST /api/user');
-            console.log(req.body);
-
-            const user = new User();
-            user.telegramId = req.body.name;
-            user.conversationId = req.body.picture;
-
-            user.save();
-
-            console.log(user.conversationId);
+            // console.log(user.conversationId);
             let mensaje = '';
             // Pillamos el body
             const { text } = req.body.message;
@@ -46,6 +39,23 @@ app.post('/webhooks/telegram', async (req, res) => {
                 if (evento === null || evento === false) {
                     mensaje = `Evento mal introducido. Use "/help" para la lista de comandos.`;
                 } else {
+                    let user;
+                    if (
+                        db.Telegram.find({
+                            'user.telegramId': req.body.message.from.id.toString(),
+                        })
+                    ) {
+                        user = db.Telegram.find({
+                            'user.telegramId': req.body.message.from.id.toString(),
+                        });
+                    } else {
+                        user = new User();
+                    }
+                    user.telegramId = req.body.message.from.id.toString();
+                    user.conversationId = req.body.message.chat.id;
+                    user.evento.fecha = evento.fecha;
+                    user.evento.motivo = evento.motivo.toString();
+                    user.save();
                     mensaje = `Se ha creado evento en ${evento.toString()}`;
                 }
             }
