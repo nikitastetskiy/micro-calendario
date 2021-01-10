@@ -11,6 +11,8 @@ const port = process.env.PORT || 3000;
 
 const db = process.env.MONGODB_URI;
 
+const collection = db.db('Micro-Calendario').collection('Telegram');
+
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
@@ -41,11 +43,11 @@ app.post('/webhooks/telegram', async (req, res) => {
                 } else {
                     let user;
                     if (
-                        db.Telegram.find({
+                        collection.find({
                             'user.telegramId': req.body.message.from.id.toString(),
                         })
                     ) {
-                        user = db.Telegram.find({
+                        user = collection.find({
                             'user.telegramId': req.body.message.from.id.toString(),
                         });
                     } else {
