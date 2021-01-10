@@ -5,13 +5,11 @@ const User = require('./models/user');
 
 const app = express();
 
-require('./models/database');
+const db = require('./models/database');
 
 const port = process.env.PORT || 3000;
 
-const db = process.env.MONGODB_URI;
-
-const collection = db('Micro-Calendario').collection('Telegram');
+// const db = process.env.MONGODB_URI;
 
 app.use(bodyParser.json());
 
@@ -43,11 +41,11 @@ app.post('/webhooks/telegram', async (req, res) => {
                 } else {
                     let user;
                     if (
-                        collection.find({
+                        db.find({
                             'user.telegramId': req.body.message.from.id.toString(),
                         })
                     ) {
-                        user = collection.find({
+                        user = db.find({
                             'user.telegramId': req.body.message.from.id.toString(),
                         });
                     } else {
