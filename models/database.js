@@ -58,6 +58,21 @@ class Db {
 
         this.userModel.findOne({ telegramId: id }, function (err, doc) {
             if (doc == null) {
+                console.log('funciona A');
+                const usuario = {
+                    telegramId: id,
+                    conversationId: chat,
+                    evento: [
+                        {
+                            fecha: fec,
+                            motivo: mot,
+                        },
+                    ],
+                };
+                const user = new this.userModel(usuario);
+                user.save();
+                console.log(user);
+            } else {
                 // do whatever you need to do if it's not there
                 console.log('funciona B');
                 const userA = this.userModel.find({
@@ -75,21 +90,6 @@ class Db {
                 );
                 userA.save();
                 console.log(userA);
-            } else {
-                console.log('funciona A');
-                const usuario = {
-                    telegramId: id,
-                    conversationId: chat,
-                    evento: [
-                        {
-                            fecha: fec,
-                            motivo: mot,
-                        },
-                    ],
-                };
-                const user = new this.userModel(usuario);
-                user.save();
-                console.log(user);
             }
         });
         // this.close();
