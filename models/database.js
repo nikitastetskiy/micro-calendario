@@ -58,8 +58,7 @@ class Db {
         this.userModel.count({ telegramId: id }, (err, count) => {
             if (count > 0) {
                 console.log('funciona B');
-                const userA = this.getUser(id);
-                userA.update(
+                this.userModel.update(
                     { telegramId: id },
                     {
                         $push: {
