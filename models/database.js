@@ -55,16 +55,7 @@ class Db {
                 telegramId: id,
             })
         );
-        let existe = true;
-        this.userModel.findOne({ telegramId: id }, (err, doc) => {
-            if (doc == null) {
-                // do whatever you need to do if it's not there
-                existe = false;
-            } else {
-                existe = true;
-            }
-        });
-        if (existe) {
+        if (this.userModel.find({ telegramId: id }).count()) {
             console.log('funciona B');
             const userA = this.userModel.findOne({
                 telegramId: id,
