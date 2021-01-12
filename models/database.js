@@ -55,6 +55,13 @@ class Db {
                 telegramId: id,
             })
         );
+        this.userModel.count({ telegramId: id }, (err, count) => {
+            if (count > 0) {
+                console.log('Mayor que 0');
+            } else {
+                console.log('A 0');
+            }
+        });
         if (this.userModel.find({ telegramId: id }).count() === 1) {
             console.log('funciona B');
             const userA = this.userModel.findOne({
@@ -70,7 +77,6 @@ class Db {
                     },
                 }
             );
-            console.log(userA);
         } else {
             console.log('funciona A');
             const usuario = {
@@ -85,7 +91,6 @@ class Db {
             };
             const user = new this.userModel(usuario);
             user.save();
-            console.log(user);
         }
         // this.close();
     }
