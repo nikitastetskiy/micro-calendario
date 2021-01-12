@@ -68,7 +68,7 @@ class Db {
                     },
                 }
             );
-            return await userA.save();
+            return await userA;
         }
         const user = new this.userModel();
         user.telegramId = id;
