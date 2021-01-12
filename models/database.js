@@ -50,10 +50,15 @@ class Db {
     }
 
     async getOrCreateUser(id, chat, fec, mot) {
+        console.log(
+            this.userModel.find({
+                telegramId: id,
+            })
+        );
         if (
             this.userModel.find({
                 telegramId: id,
-            }) === 0
+            }) === 1
         ) {
             console.log('funciona B');
             const userA = this.userModel.find({
