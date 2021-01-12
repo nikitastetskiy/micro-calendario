@@ -92,7 +92,7 @@ class Db {
                 console.log(user);
             }
         });
-        this.close();
+        // this.close();
     }
 
     async createKitten(newUser) {
