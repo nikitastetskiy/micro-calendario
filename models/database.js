@@ -50,18 +50,17 @@ class Db {
     }
 
     async getOrCreateUser(id, chat, fec, mot) {
-        // let user;
         if (
             this.userModel.find({
                 telegramId: id,
             })
         ) {
-            const user = new this.userModel.find({
+            const userA = this.userModel.find({
                 telegramId: id,
             });
 
-            user.update(
-                { telegramId: user.telegramId },
+            userA.update(
+                { telegramId: userA.telegramId },
                 {
                     $push: {
                         fecha: fec,
@@ -69,7 +68,7 @@ class Db {
                     },
                 }
             );
-            return await user.save();
+            return await userA.save();
         }
         const user = new this.userModel();
         user.telegramId = id;
