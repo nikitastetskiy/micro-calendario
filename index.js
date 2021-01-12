@@ -46,13 +46,7 @@ app.post('/webhooks/telegram', async (req, res) => {
                     const chat = req.body.message.chat.id;
                     const fec = evento.getFecha();
                     const mot = evento.getMotivo().toString();
-                    const newUser = await userDB.getOrCreateUser(
-                        id,
-                        chat,
-                        fec,
-                        mot
-                    );
-                    console.log(newUser);
+                    await userDB.getOrCreateUser(id, chat, fec, mot);
                     mensaje = `Se ha creado evento en ${evento.toString()}`;
                 }
             }

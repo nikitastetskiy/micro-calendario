@@ -55,54 +55,44 @@ class Db {
                 telegramId: id,
             })
         );
-        if (
-            this.userModel.find({
-                telegramId: id,
-            }) === 1
-        ) {
-            console.log('funciona B');
-            const userA = this.userModel.find({
-                telegramId: id,
-            });
 
-            userA.update(
-                { telegramId: userA.telegramId },
-                {
-                    $push: {
-                        fecha: fec,
-                        motivo: mot,
-                    },
-                }
-            );
-            return await userA;
-        }
-        console.log('funciona A');
-        const usuario = {
-            telegramId: id,
-            conversationId: chat,
-            evento: [
-                {
-                    fecha: fec,
-                    motivo: mot,
-                },
-            ],
-        };
-        const user = new this.userModel(usuario);
-        // user.telegramId = id;
-        // user.conversationId = chat;
+        this.userModel.findOne({ telegramId: id }, function (err, doc) {
+            if (doc == null) {
+                // do whatever you need to do if it's not there
+                console.log('funciona B');
+                const userA = this.userModel.find({
+                    telegramId: id,
+                });
 
-        // user.update(
-        //     { telegramId: user.telegramId },
-        //     {
-        //         $push: {
-        //             fecha: fec,
-        //             motivo: mot,
-        //         },
-        //     }
-        // );
-        return await user.save();
-
-        // console.log(evento.getFecha());
+                userA.update(
+                    { telegramId: userA.telegramId },
+                    {
+                        $push: {
+                            fecha: fec,
+                            motivo: mot,
+                        },
+                    }
+                );
+                userA.save();
+                console.log(userA);
+            } else {
+                console.log('funciona A');
+                const usuario = {
+                    telegramId: id,
+                    conversationId: chat,
+                    evento: [
+                        {
+                            fecha: fec,
+                            motivo: mot,
+                        },
+                    ],
+                };
+                const user = new this.userModel(usuario);
+                user.save();
+                console.log(user);
+            }
+        });
+        this.close();
     }
 
     async createKitten(newUser) {
