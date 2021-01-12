@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const express = require('express');
 const Planner = require('./src/eventscalendar/planner');
 const User = require('./models/user');
@@ -12,6 +13,8 @@ const port = process.env.PORT || 3000;
 // const db = process.env.MONGODB_URI;
 
 app.use(bodyParser.json());
+
+const userDB = require('./models/database')(mongoose);
 
 app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
 
@@ -39,31 +42,17 @@ app.post('/webhooks/telegram', async (req, res) => {
                 if (evento === null || evento === false) {
                     mensaje = `Evento mal introducido. Use "/help" para la lista de comandos.`;
                 } else {
-                    let user;
-                    if (
-                        user.find({
-                            telegramId: req.body.message.from.id.toString(),
-                        })
-                    ) {
-                        user = user.find({
-                            telegramId: req.body.message.from.id.toString(),
-                        });
-                    } else {
-                        user = new User();
-                        user.telegramId = req.body.message.from.id.toString();
-                        user.conversationId = req.body.message.chat.id;
-                    }
-                    console.log(evento.getFecha());
-                    user.update(
-                        { telegramId: user.telegramId },
-                        {
-                            $push: {
-                                fecha: evento.getFecha(),
-                                motivo: evento.getMotivo().toString(),
-                            },
-                        }
+                    const id = req.body.message.from.id.toString();
+                    const chat = req.body.message.chat.id;
+                    const fec = evento.getFecha();
+                    const mot = evento.getMotivo().toString();
+                    const newUser = await userDB.getOrCreateUser(
+                        id,
+                        chat,
+                        fec,
+                        mot
                     );
-                    await user.save();
+                    console.log(newUser);
                     mensaje = `Se ha creado evento en ${evento.toString()}`;
                 }
             }
@@ -86,6 +75,16 @@ app.post('/webhooks/telegram', async (req, res) => {
     }
 });
 
-app.listen(port, () =>
-    console.log(`Micro-Calendario app listening on port ${port}!`)
-);
+const url = process.env.MONGODB_URI;
+
+mongoose
+    .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(async () => {
+        await app.listen(port); // Start the API
+        console.log(`API running on port ${port}!`);
+    })
+    .catch((error) => console.error(error));
+
+// app.listen(port, () =>
+//     console.log(`Micro-Calendario app listening on port ${port}!`)
+// );
