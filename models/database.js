@@ -59,10 +59,17 @@ class Db {
             if (count > 0) {
                 console.log('funciona B');
                 const userA = this.getUser(id);
-                userA.evento.push({
-                    fecha: fec,
-                    motivo: mot,
-                });
+                userA.update(
+                    { telegramId: id },
+                    {
+                        $push: {
+                            evento: {
+                                fecha: fec,
+                                motivo: mot,
+                            },
+                        },
+                    }
+                );
             } else {
                 console.log('funciona A');
                 const usuario = {
