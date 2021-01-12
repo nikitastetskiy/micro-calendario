@@ -55,6 +55,7 @@ class Db {
                 telegramId: id,
             }) !== 0
         ) {
+            console.log('funciona B');
             const userA = this.userModel.find({
                 telegramId: id,
             });
@@ -70,6 +71,7 @@ class Db {
             );
             return await userA;
         }
+        console.log('funciona A');
         const usuario = {
             telegramId: id,
             conversationId: chat,
