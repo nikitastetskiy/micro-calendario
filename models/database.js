@@ -55,43 +55,48 @@ class Db {
                 telegramId: id,
             })
         );
-
-        this.userModel.findOne({ telegramId: id }, function (err, doc) {
+        let existe;
+        this.userModel.findOne({ telegramId: id }, (err, doc) => {
             if (doc == null) {
-                console.log('funciona A');
-                const usuario = {
-                    telegramId: id,
-                    conversationId: chat,
-                    evento: [
-                        {
-                            fecha: fec,
-                            motivo: mot,
-                        },
-                    ],
-                };
-                const user = new this.userModel(usuario);
-                user.save();
-                console.log(user);
-            } else {
                 // do whatever you need to do if it's not there
-                console.log('funciona B');
-                const userA = this.userModel.find({
-                    telegramId: id,
-                });
-
-                userA.update(
-                    { telegramId: userA.telegramId },
-                    {
-                        $push: {
-                            fecha: fec,
-                            motivo: mot,
-                        },
-                    }
-                );
-                userA.save();
-                console.log(userA);
+                existe = false;
+            } else {
+                existe = true;
             }
         });
+        if (existe) {
+            console.log('funciona B');
+            const userA = this.userModel.find({
+                telegramId: id,
+            });
+
+            userA.update(
+                { telegramId: userA.telegramId },
+                {
+                    $push: {
+                        fecha: fec,
+                        motivo: mot,
+                    },
+                }
+            );
+            userA.save();
+            console.log(userA);
+        } else {
+            console.log('funciona A');
+            const usuario = {
+                telegramId: id,
+                conversationId: chat,
+                evento: [
+                    {
+                        fecha: fec,
+                        motivo: mot,
+                    },
+                ],
+            };
+            const user = new this.userModel(usuario);
+            user.save();
+            console.log(user);
+        }
         // this.close();
     }
 
