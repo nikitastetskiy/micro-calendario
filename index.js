@@ -7,8 +7,6 @@ const app = express();
 
 require('./models/database');
 
-const db = require('./models/user');
-
 const port = process.env.PORT || 3000;
 
 // const db = process.env.MONGODB_URI;
@@ -43,21 +41,20 @@ app.post('/webhooks/telegram', async (req, res) => {
                 } else {
                     let user;
                     if (
-                        db.find({
+                        user.find({
                             telegramId: req.body.message.from.id.toString(),
                         })
                     ) {
-                        user = db.find({
+                        user = user.find({
                             telegramId: req.body.message.from.id.toString(),
                         });
                     } else {
                         user = new User();
                         user.telegramId = req.body.message.from.id.toString();
                         user.conversationId = req.body.message.chat.id;
-                        user.save();
                     }
                     console.log(evento.getFecha());
-                    db.update(
+                    user.update(
                         { telegramId: user.telegramId },
                         {
                             $push: {
@@ -66,6 +63,7 @@ app.post('/webhooks/telegram', async (req, res) => {
                             },
                         }
                     );
+                    await user.save();
                     mensaje = `Se ha creado evento en ${evento.toString()}`;
                 }
             }
