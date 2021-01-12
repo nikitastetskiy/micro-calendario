@@ -70,19 +70,29 @@ class Db {
             );
             return await userA;
         }
-        const user = new this.userModel();
-        user.telegramId = id;
-        user.conversationId = chat;
-
-        user.update(
-            { telegramId: user.telegramId },
-            {
-                $push: {
+        const usuario = {
+            telegramId: id,
+            conversationId: chat,
+            evento: [
+                {
                     fecha: fec,
                     motivo: mot,
                 },
-            }
-        );
+            ],
+        };
+        const user = new this.userModel(usuario);
+        // user.telegramId = id;
+        // user.conversationId = chat;
+
+        // user.update(
+        //     { telegramId: user.telegramId },
+        //     {
+        //         $push: {
+        //             fecha: fec,
+        //             motivo: mot,
+        //         },
+        //     }
+        // );
         return await user.save();
 
         // console.log(evento.getFecha());
