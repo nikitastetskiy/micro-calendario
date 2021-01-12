@@ -79,7 +79,6 @@ class Db {
                     },
                 }
             );
-            userA.save();
             console.log(userA);
         } else {
             console.log('funciona A');
