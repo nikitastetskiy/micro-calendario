@@ -42,7 +42,7 @@ class Db {
 
     async getUser(id) {
         try {
-            return await this.userModel.findeOne(id);
+            return await this.userModel.findOne({ telegramId: id });
         } catch (error) {
             console.error('getUser:', error.message);
             return {};
