@@ -53,7 +53,7 @@ class Db {
         if (
             this.userModel.find({
                 telegramId: id,
-            })
+            }) !== 0
         ) {
             const userA = this.userModel.find({
                 telegramId: id,
