@@ -55,7 +55,7 @@ class Db {
                 telegramId: id,
             })
         );
-        if (this.userModel.find({ telegramId: id }).count()) {
+        if (this.userModel.find({ telegramId: id }).count() === 1) {
             console.log('funciona B');
             const userA = this.userModel.findOne({
                 telegramId: id,
