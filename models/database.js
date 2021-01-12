@@ -57,41 +57,36 @@ class Db {
         );
         this.userModel.count({ telegramId: id }, (err, count) => {
             if (count > 0) {
-                console.log('Mayor que 0');
+                console.log('funciona B');
+                const userA = this.userModel.findOne({
+                    telegramId: id,
+                });
+
+                userA.update(
+                    { telegramId: userA.telegramId },
+                    {
+                        $push: {
+                            fecha: fec,
+                            motivo: mot,
+                        },
+                    }
+                );
             } else {
-                console.log('A 0');
+                console.log('funciona A');
+                const usuario = {
+                    telegramId: id,
+                    conversationId: chat,
+                    evento: [
+                        {
+                            fecha: fec,
+                            motivo: mot,
+                        },
+                    ],
+                };
+                const user = new this.userModel(usuario);
+                user.save();
             }
         });
-        if (this.userModel.find({ telegramId: id }).count() === 1) {
-            console.log('funciona B');
-            const userA = this.userModel.findOne({
-                telegramId: id,
-            });
-
-            userA.update(
-                { telegramId: userA.telegramId },
-                {
-                    $push: {
-                        fecha: fec,
-                        motivo: mot,
-                    },
-                }
-            );
-        } else {
-            console.log('funciona A');
-            const usuario = {
-                telegramId: id,
-                conversationId: chat,
-                evento: [
-                    {
-                        fecha: fec,
-                        motivo: mot,
-                    },
-                ],
-            };
-            const user = new this.userModel(usuario);
-            user.save();
-        }
         // this.close();
     }
 
