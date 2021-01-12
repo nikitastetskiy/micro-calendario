@@ -42,7 +42,7 @@ class Db {
 
     async getUser(id) {
         try {
-            return await this.userModel.findById(id);
+            return await this.userModel.findeOne(id);
         } catch (error) {
             console.error('getUser:', error.message);
             return {};
@@ -50,27 +50,19 @@ class Db {
     }
 
     async getOrCreateUser(id, chat, fec, mot) {
-        console.log(
-            this.userModel.find({
-                telegramId: id,
-            })
-        );
+        // console.log(
+        //     this.userModel.find({
+        //         telegramId: id,
+        //     })
+        // );
         this.userModel.count({ telegramId: id }, (err, count) => {
             if (count > 0) {
                 console.log('funciona B');
-                const userA = this.userModel.findOne({
-                    telegramId: id,
+                const userA = this.getUser(id);
+                userA.evento.push({
+                    fecha: fec,
+                    motivo: mot,
                 });
-
-                userA.update(
-                    { telegramId: userA.telegramId },
-                    {
-                        $push: {
-                            fecha: fec,
-                            motivo: mot,
-                        },
-                    }
-                );
             } else {
                 console.log('funciona A');
                 const usuario = {
