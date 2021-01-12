@@ -55,7 +55,7 @@ class Db {
                 telegramId: id,
             })
         );
-        let existe;
+        let existe = true;
         this.userModel.findOne({ telegramId: id }, (err, doc) => {
             if (doc == null) {
                 // do whatever you need to do if it's not there
@@ -66,19 +66,14 @@ class Db {
         });
         if (existe) {
             console.log('funciona B');
-            const userA = this.userModel.find({
+            const userA = this.userModel.findOne({
                 telegramId: id,
             });
-
-            userA.update(
-                { telegramId: userA.telegramId },
-                {
-                    $push: {
-                        fecha: fec,
-                        motivo: mot,
-                    },
-                }
-            );
+            const eve = {
+                fecha: fec,
+                motivo: mot,
+            };
+            userA.evento.push(eve);
             userA.save();
             console.log(userA);
         } else {
