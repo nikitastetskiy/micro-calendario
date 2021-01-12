@@ -69,11 +69,16 @@ class Db {
             const userA = this.userModel.findOne({
                 telegramId: id,
             });
-            const eve = {
-                fecha: fec,
-                motivo: mot,
-            };
-            userA.evento.push(eve);
+
+            userA.update(
+                { telegramId: userA.telegramId },
+                {
+                    $push: {
+                        fecha: fec,
+                        motivo: mot,
+                    },
+                }
+            );
             userA.save();
             console.log(userA);
         } else {
