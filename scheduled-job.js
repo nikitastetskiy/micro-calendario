@@ -1,21 +1,19 @@
 /* eslint-disable no-underscore-dangle */
 const TelegramBot = require('node-telegram-bot-api');
-const aws = require('aws-sdk');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const userDB = require('./models/database')(mongoose);
 
-const s3 = new aws.S3({
-    url: process.env.MONGODB_URI,
-    token: process.env.TELEGRAM_API_TOKEN,
-});
+const url = process.env.MONGODB_URI;
+const token = process.env.TELEGRAM_API_TOKEN;
 
-console.log(s3.url);
+console.log(url);
 
-const bot = new TelegramBot(s3.token, { polling: true });
+const bot = new TelegramBot(token, { polling: true });
 
 mongoose
-    .connect(s3.url, { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(async () => {
         console.log(`BD - BOT Schedule`);
     })
