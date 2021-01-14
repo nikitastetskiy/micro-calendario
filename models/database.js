@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-return-await */
 /* eslint-disable new-cap */
 // const mongoose = require('mongoose');
@@ -93,25 +94,34 @@ class Db {
             fecha: fec,
             motivo: mot,
         };
-        const user = new this.userModel(evento);
-        user.save();
+        const user = await new this.userModel(evento);
+        await user.save();
     }
 
     async getNumEventosExpirados() {
-        const count = this.userModel.count({ fecha: { $lte: Date.now() } });
-        return count;
+        const count = await this.userModel.countDocuments({
+            fecha: { $lte: Date.now() },
+        });
+        return await count;
     }
 
     async getEventoExpirado() {
-        const evento = this.userModel
+        const evento = await this.userModel
             .find({ fecha: { $lte: Date.now() } })
             .limit(1);
-        return evento;
+        return await evento;
+    }
+
+    async getEventoId() {
+        const evento = await this.userModel
+            .find({ fecha: { $lte: Date.now() } })
+            .limit(1);
+        return await evento.conversationId;
     }
 
     async deleteEventoExpirado(id) {
         try {
-            this.userModel.deleteOne({ _id: id });
+            await this.userModel.deleteOne({ _id: id });
         } catch (e) {
             console.error(e);
         }
