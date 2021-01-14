@@ -9,6 +9,7 @@ const url = process.env.MONGODB_URI;
 const token = process.env.TELEGRAM_API_TOKEN;
 
 console.log(url);
+console.log(token);
 
 const bot = new TelegramBot(token, { polling: true });
 
