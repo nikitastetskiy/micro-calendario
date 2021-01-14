@@ -2,7 +2,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const express = require('express');
 const Planner = require('./src/eventscalendar/planner');
-const User = require('./models/user');
 
 const app = express();
 
@@ -46,7 +45,7 @@ app.post('/webhooks/telegram', async (req, res) => {
                     const chat = req.body.message.chat.id;
                     const fec = evento.getFecha();
                     const mot = evento.getMotivo().toString();
-                    await userDB.getOrCreateUser(id, chat, fec, mot);
+                    await userDB.createEvento(id, chat, fec, mot);
                     mensaje = `Se ha creado evento en ${evento.toString()}`;
                 }
             }
