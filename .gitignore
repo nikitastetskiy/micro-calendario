@@ -10,3 +10,5 @@ node_modules/
 src/routes/logs/log-api.log
 # Local Netlify folder
 .netlify
+
+.env
