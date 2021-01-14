@@ -6,7 +6,7 @@ const userDB = require('./models/database')(mongoose);
 
 const url = process.env.MONGODB_URI;
 
-const token = 'YOUR_TELEGRAM_BOT_TOKEN';
+const token = process.env.TELEGRAM_API_TOKEN;
 const bot = new TelegramBot(token, { polling: true });
 
 mongoose
@@ -19,7 +19,7 @@ mongoose
 bot.on('message', (msg) => {
     while (userDB.getNumEventosExpirados() !== 0) {
         const user = userDB.getEventoExpirado();
-        bot.sendMessage(user.conversationId, 'Hello dear user');
+        // bot.sendMessage(user.conversationId, 'Hello dear user');
         userDB.deleteEventoExpirado(user._id.toString());
     }
 });
