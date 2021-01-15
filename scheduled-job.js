@@ -12,7 +12,6 @@ const token = process.env.TELEGRAM_API_TOKEN;
 
 async function Bucle() {
     while ((await userDB.getNumEventosExpirados()) !== 0) {
-        console.log('hola');
         const user = await userDB.getEventoExpirado();
         await new Promise((resolve) => {
             request(
@@ -33,7 +32,7 @@ async function Bucle() {
             );
         });
     }
-    await process.exit();
+    process.exit();
 }
 
 mongoose
