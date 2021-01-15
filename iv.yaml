@@ -9,3 +9,13 @@ taskfile:
 - package.json
 URL: https://micro-calendario.vercel.app/calendar?fecha=1995-12-17T03:24:00%20Evento%201
 make: grunt
+PaaS: https://micro-calendario.herokuapp.com/webhooks/telegram
+recurso:
+  nombre: events
+  metodo: POST
+  payload:
+    message:
+      - from:
+        id: 0
+      - chat:
+        id: 0
