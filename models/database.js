@@ -3,20 +3,9 @@
 /* eslint-disable new-cap */
 // const mongoose = require('mongoose');
 
-// mongoose
-//     .connect(process.env.MONGODB_URI, {
-//         useNewUrlParser: true,
-//     })
-//     .then((db) => console.log(`DB is connected - Micro-Calendario`))
-//     .catch((err) => console.error(err));
-
 class Db {
-    /**
-     * Constructors an object for accessing kittens in the database
-     * @param mongoose the mongoose object used to create schema objects for the database
-     */
     constructor(mongoose) {
-        // This is the schema we need to store kittens in MongoDB
+        // This is the schema
         const UserSchema = new mongoose.Schema({
             telegramId: { type: String, required: true },
             conversationId: { type: String, required: true },
@@ -24,7 +13,7 @@ class Db {
             motivo: { type: String, required: false },
         });
 
-        // This model is used in the methods of this class to access kittens
+        // This model is used in the methods of this class to access user
         this.userModel = mongoose.model('user', UserSchema);
     }
 
@@ -46,7 +35,7 @@ class Db {
         }
     }
 
-    // NO FUNCIONABA EL UPDATE ASI QUE LO HE TENIDO QUE CAMBIAR
+    // UPDATE NOT WORKING
 
     // async getOrCreateUser(id, chat, fec, mot) {
     //     // console.log(
@@ -128,5 +117,4 @@ class Db {
     }
 }
 
-// We export the object used to access the kittens in the database
 module.exports = (mongoose) => new Db(mongoose);
