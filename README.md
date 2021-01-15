@@ -255,7 +255,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 
 </details>
 
-<details><summary><b>Diseño y test de un microservicio</b></summary>
+<details><summary><b>Despliegue de una aplicación en un PaaS</b></summary>
 
 <dl>
     <dd> <blockquote>
@@ -294,6 +294,9 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         <li>Se ha configurado un <strong>GET</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/4">HU1: Consulta de eventos</a>.</li>
         <li>Se ha configurado un <strong>GET</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/5">HU2: Consulta específica de eventos</a>.</li>
         <li>Se ha configurado un <strong>PUT</strong> para <a href="https://github.com/nikitastetskiy/micro-calendario/issues/6">HU3: Creación de eventos</a>.</li>
+        <li>Se ha configurado un <a href="index.js">index</a> para la ejcución correcta de Heroku.</li>
+        <li>Se ha configurado un <a href="scheduled-job.js">un script en js</a> dónde lo ejecuto gracias al Scheduler de Heroku.</li>
+        <li>La clase dónde implementé MongoDb se encuentra en <a href="models/database.js">este archivo</a>.</li>
         <li>Todas las rutas se han configurado en <a href="src/routes/routes.js">este archivo</a>. Los test correspondientes en <a href="test/routes.test.js">este archivo</a>.</li>
     </ul>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.
@@ -324,6 +327,7 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
                 <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/19">HU8</a>: Vercel.</li>
                 <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/20">HU9</a>: Netlify.</li>
                 <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/21">NO-HU</a>: Telegram bot.</li>
+                <li><a href="https://github.com/nikitastetskiy/micro-calendario/issues/26">NO-HU-</a>: PaaS.</li>
             </ul>
     </ul>
     Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/plan.md">este enlace</a>.

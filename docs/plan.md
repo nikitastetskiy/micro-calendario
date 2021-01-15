@@ -67,3 +67,10 @@
 - Se ha configurado un **GET** para [HU2: Consulta específica de eventos](https://github.com/nikitastetskiy/micro-calendario/issues/5).
 - Se ha configurado un **PUT** para [HU3: Creación de eventos](https://github.com/nikitastetskiy/micro-calendario/issues/6).
 - Todas las rutas se han configurado en [este archivo](../src/routes/routes.js). Los test correspondientes en [este archivo](../test/routes.test.js).
+
+## [Séptimo Hito](http://jj.github.io/IV/documentos/temas/PaaS): Desplegando aplicaciones en la nube: Uso de PaaS
+
+- Todos los commits se han reflejado en este [issue](https://github.com/nikitastetskiy/micro-calendario/issues/26).
+- Se ha configurado un [index](./../index.js) para la ejcución correcta de Heroku.
+- Se ha configurado un [un script en js](./../scheduled-job.js) dónde lo ejecuto gracias al Scheduler de Heroku.
+- La clase dónde implementé MongoDb se encuentra en [este archivo](./../models/database.js).
