@@ -9,8 +9,6 @@ require('./models/database');
 
 const port = process.env.PORT || 3000;
 
-// const db = process.env.MONGODB_URI;
-
 app.use(bodyParser.json());
 
 const userDB = require('./models/database')(mongoose);
@@ -20,10 +18,6 @@ app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
 app.post('/webhooks/telegram', async (req, res) => {
     if (req.body !== undefined) {
         if (req.body.message !== undefined) {
-            // console.log('POST /api/user');
-            // console.log(req.body);
-
-            // console.log(user.conversationId);
             let mensaje = '';
             // Pillamos el body
             const { text } = req.body.message;
