@@ -12,15 +12,28 @@ const token = process.env.TELEGRAM_API_TOKEN;
 
 async function Bucle() {
     while ((await userDB.getNumEventosExpirados()) !== 0) {
+        console.log('hola');
         const user = await userDB.getEventoExpirado();
-        const obj = await JSON.parse(JSON.stringify(user));
-        await console.log(obj[0]._id);
-        const data = await encodeURI('Evento cumplido!');
-        await request(
-            `https://api.telegram.org/bot${token}/sendmessage?chat_id=${obj[0].conversationId}&text=${data}`
-        );
-        await userDB.deleteEventoExpirado(obj[0]._id);
+        await new Promise((resolve) => {
+            request(
+                {
+                    url: `https://api.telegram.org/bot${token}/sendmessage?chat_id=${
+                        JSON.parse(JSON.stringify(user))[0].conversationId
+                    }&text=Evento programado: ${
+                        JSON.parse(JSON.stringify(user))[0].motivo
+                    }`,
+                },
+                (error, response, body) => {
+                    if (!error) resolve(body);
+                }
+            );
+        }).then((value) => {
+            userDB.deleteEventoExpirado(
+                JSON.parse(JSON.stringify(user))[0]._id
+            );
+        });
     }
+    await process.exit();
 }
 
 mongoose
@@ -29,5 +42,3 @@ mongoose
     .catch((error) => console.error(error));
 
 Bucle();
-
-process.exit();
