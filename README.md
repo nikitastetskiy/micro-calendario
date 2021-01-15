@@ -255,6 +255,21 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
 
 </details>
 
+<details><summary><b>Diseño y test de un microservicio</b></summary>
+
+<dl>
+    <dd> <blockquote>
+        <p>Comparando varios servicios PaaS, finalmente me he decidido que la plataforma de despliegue para mi aplicación sea Heroku. No he cogido OpenShift porque primero necesita usar PostgreSQL, que en realidad es bastante sencillo de implementar, es más, en este proyecto empecé a usar PostgreSQL y luego tuve que moverlo a MongoDB, aunque esto lo explicaré más adelante. Otra de las limitaciones de OpenShift es que el almacenamiento se expira a los 60 días, algo que en mi aplicación es bastante crucial. También tiene que dormir 18 horas en un periodo de 72h. Mientras que en Heroku tienes un límite de horas por dynos, es decir, que si organizas bien las horas puedes tener un despliegue activo en casi todo el momento. En general, los dynos son mucho más flexibles que las aplicaciones de OpenShift.</p>
+        <p>Para la configuración de Heroku, me he descargado su <em>cinturón de herramientas</em>. Luego he accedido con mis credencias con <code>heroku login</code> y he creado un archivo <a href="index.js">index</a> para la ejecución de npm start. Heroku funciona con git, por lo que todos los commits se han reflejado en este <a href="https://github.com/nikitastetskiy/micro-calendario/issues/26">issue</a> y para subirlo a la plataforma se usa <code>git push heroku master</code>. Ahora bien, hay tantos commits probando la ejecución del programa porque básicamente Telegram solo acepta peticiones por https, algo que nos proporciona Heroku y que yo no puedo probar en local. Aunque si se podría con herramientas como Postman Canary. Aun así, index tendría que cumplir el próposito de las rutas creadas anteriormente, aun así he tenido que configurar una ruta de nuevo para el correcto funcionamiento de Telegram, ya que mi intención inicial era crear un bot. Al ser un webhook, solo recibo peticiones post y luego las tengo que diferenciar con los comandos que me proporcione el mensaje del chat.</p>
+        <p>Finalmente, para la ejecución correcta de mi aplicación he tenido que crear una base de datos con MongoDB Atlas. He elegido esta opción porque principalmente necesitaba una base de datos NoSQL, es decir que haya un objeto por usuario y que ese objeto tenga un array de eventos. A medida que lo estaba haciendo, me encontré con muchos fallos a la hora de implementar la clase, por lo que al final no lo implementé como array, pero continué usando MongoDB. La clase dónde implementé MongoDb se encuentra en <a href="/models/database.js">este archivo</a>. Para el uso correcto de base de datos, implementé <a href="scheduled-job.js">un script en js</a> dónde lo ejecuto gracias al Scheduler de Heroku. Lo que hago en ese script es recorrer los eventos expirados y enviarlos con una request por https a través de la api de telegram. Este script se puede ejecutar cada hora.</p>
+        <p>Aquí una prueba del funcionamiento:</p>
+        <p><img src="docs/img/paas.png" alt=""></p>
+        <p>Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/herramientas.md">este enlace</a>.</p>
+    </blockquote> </dd>
+</dl>
+
+</details>
+
 <details><summary><b>Enlaces a códigos y clases</b></summary>
 
 <dl>
