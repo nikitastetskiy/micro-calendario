@@ -54,13 +54,18 @@ app.post('/webhooks/telegram', async (req, res) => {
                 method: 'sendMessage',
                 chat_id: req.body.message.chat.id,
             };
+            res.location('/webhooks/telegram');
             res.setHeader('Content-Type', 'application/json; charset=utf-8');
             res.status(201).json(objetoJSON);
         } else {
-            res.status(201).send('FIELD_MESSAGE_EMPTY');
+            console.log(req);
+            res.location('/webhooks/telegram');
+            res.status(400).send('FIELD_MESSAGE_EMPTY');
         }
     } else {
-        res.status(201).send('FIELD_BODY_EMPTY');
+        console.log(req);
+        res.location('/webhooks/telegram');
+        res.status(400).send('FIELD_BODY_EMPTY');
     }
 });
 
