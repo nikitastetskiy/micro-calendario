@@ -15,7 +15,17 @@ recurso:
   metodo: POST
   payload:
     message:
-      - from:
-        id: 0
-      - chat:
-        id: 0
+      message_id: 93
+      from:
+        id: 10000
+        is_bot: false
+        first_name: Jiayu
+        username: jiayu
+        language_code: en-US
+      chat:
+        id: 10000
+        first_name: Jiayu
+        username: jiayu
+        type: private
+      date: 1509641174
+      text: "/help"
