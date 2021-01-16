@@ -1,12 +1,7 @@
-entidad:
-- src/eventscalendar/events.js
-- src/eventscalendar/planner.js
-lenguaje:
-- JavaScript
-test:
-- test/util.test.js
-taskfile:
-- package.json
+entidad: src/eventscalendar/events.js
+lenguaje: JavaScript
+test: test/util.test.js
+taskfile: package.json
 URL: https://micro-calendario.vercel.app/calendar?fecha=1995-12-17T03:24:00%20Evento%201
 make: grunt
 PaaS: https://micro-calendario.herokuapp.com/
@@ -14,18 +9,19 @@ recurso:
   nombre: webhooks/telegram
   metodo: POST
   payload:
-    message:
-      message_id: 93
-      from:
-        id: 10000
-        is_bot: false
-        first_name: Jiayu
-        username: jiayu
-        language_code: en-US
-      chat:
-        id: 10000
-        first_name: Jiayu
-        username: jiayu
-        type: private
-      date: 1509641174
-      text: "/help"
+    body:
+      message:
+        message_id: 93
+        from:
+          id: 10000
+          is_bot: false
+          first_name: Jiayu
+          username: jiayu
+          language_code: en-US
+        chat:
+          id: 10000
+          first_name: Jiayu
+          username: jiayu
+          type: private
+        date: 1509641174
+        text: "/help"
