@@ -55,7 +55,7 @@ app.post('/webhooks/telegram', async (req, res) => {
                 chat_id: req.body.message.chat.id,
             };
             res.setHeader('Content-Type', 'application/json; charset=utf-8');
-            res.status(200).json(objetoJSON);
+            res.status(201).json(objetoJSON);
         } else {
             res.status(200).send('FIELD_MESSAGE_EMPTY');
         }
