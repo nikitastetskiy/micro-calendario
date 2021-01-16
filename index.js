@@ -15,6 +15,8 @@ const userDB = require('./models/database')(mongoose);
 
 app.get('/', (req, res) => res.send('Hello World - Micro-Calendario!'));
 
+app.get('/status', (req, res) => res.send({ status: 'OK' }));
+
 app.post('/webhooks/telegram', async (req, res) => {
     if (req.body !== undefined) {
         if (req.body.message !== undefined) {
