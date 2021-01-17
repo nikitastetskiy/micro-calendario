@@ -71,7 +71,7 @@ app.post('/webhooks/telegram', async (req, res) => {
 app.get('/webhooks/telegram/:id', (req, res) => {
     let mensaje = '';
     const evento = userDB.getEvento(mongoose.Types.ObjectId(req.params.id));
-    console.log(evento);
+    console.log(JSON.parse(JSON.stringify(evento))[0]);
     if (typeof evento !== 'undefined') {
         mensaje += `OK ${evento}`;
     } else {

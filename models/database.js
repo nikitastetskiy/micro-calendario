@@ -117,7 +117,7 @@ class Db {
     }
 
     getEvento(id) {
-        return this.userModel.find({ _id: id }).limit(1)._id.str;
+        return this.userModel.find({ _id: id }).limit(1);
     }
 }
 
