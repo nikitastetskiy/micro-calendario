@@ -85,6 +85,7 @@ class Db {
         };
         const user = await new this.userModel(evento);
         await user.save();
+        return await user;
     }
 
     async getNumEventosExpirados() {
@@ -116,8 +117,8 @@ class Db {
         }
     }
 
-    getEvento(id) {
-        return this.userModel.find({ _id: id }).limit(1);
+    async getEvento(id) {
+        return await this.userModel.find({ _id: id }).limit(1);
     }
 }
 

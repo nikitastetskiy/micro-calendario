@@ -2,6 +2,7 @@
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const express = require('express');
+require('dotenv').config();
 const Planner = require('./src/eventscalendar/planner');
 
 const app = express();
@@ -42,7 +43,12 @@ app.post('/webhooks/telegram', async (req, res) => {
                     const chat = req.body.message.chat.id;
                     const fec = evento.getFecha();
                     const mot = evento.getMotivo().toString();
-                    await userDB.createEvento(id, chat, fec, mot);
+                    const eve = await userDB.createEvento(id, chat, fec, mot);
+                    res.location(
+                        `/webhooks/telegram/${
+                            JSON.parse(JSON.stringify(eve))._id
+                        }`
+                    );
                     mensaje = `Se ha creado evento en ${evento.toString()}`;
                 }
             }
@@ -55,7 +61,6 @@ app.post('/webhooks/telegram', async (req, res) => {
                 method: 'sendMessage',
                 chat_id: req.body.message.chat.id,
             };
-            res.location('/webhooks/telegram');
             res.setHeader('Content-Type', 'application/json; charset=utf-8');
             res.status(201).json(objetoJSON);
         } else {
@@ -68,14 +73,19 @@ app.post('/webhooks/telegram', async (req, res) => {
     }
 });
 
-app.get('/webhooks/telegram/:id', (req, res) => {
+app.get('/webhooks/telegram/:id', async (req, res) => {
     let mensaje = '';
-    const evento = userDB.getEvento(mongoose.Types.ObjectId(req.params.id));
-    console.log(JSON.parse(JSON.stringify(evento))[0]);
-    if (typeof evento !== 'undefined') {
-        mensaje += `OK ${evento}`;
-    } else {
-        mensaje += 'NOT_FOUND';
+    try {
+        const evento = await userDB.getEvento(
+            mongoose.Types.ObjectId(req.params.id)
+        );
+        if (typeof evento !== 'undefined') {
+            mensaje += `OK ${JSON.parse(JSON.stringify(evento))[0]._id}`;
+        } else {
+            mensaje += 'NOT_FOUND';
+        }
+    } catch (e) {
+        mensaje += e;
     }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(mensaje);
