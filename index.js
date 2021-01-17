@@ -68,7 +68,7 @@ app.post('/webhooks/telegram', async (req, res) => {
     }
 });
 
-app.get('/webhooks/telegram:id', (req, res) => {
+app.get('/webhooks/telegram/:id', (req, res) => {
     let mensaje = '';
     const evento = userDB.getEvento(req.params.id);
     if (typeof evento._id !== 'undefined') {
