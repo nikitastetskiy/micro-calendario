@@ -115,6 +115,10 @@ class Db {
             console.error(e);
         }
     }
+
+    async getEvento(id) {
+        return await this.userModel.find({ _id: id }).limit(1);
+    }
 }
 
 module.exports = (mongoose) => new Db(mongoose);

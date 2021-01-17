@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const express = require('express');
@@ -59,14 +60,24 @@ app.post('/webhooks/telegram', async (req, res) => {
             res.status(201).json(objetoJSON);
         } else {
             console.log(req);
-            res.location('/webhooks/telegram');
-            res.status(400).send('FIELD_MESSAGE_EMPTY');
+            res.status(200).send('FIELD_MESSAGE_EMPTY');
         }
     } else {
         console.log(req);
-        res.location('/webhooks/telegram');
-        res.status(400).send('FIELD_BODY_EMPTY');
+        res.status(200).send('FIELD_BODY_EMPTY');
     }
+});
+
+app.get('/webhooks/telegram:id', (req, res) => {
+    let mensaje = '';
+    const evento = userDB.getEvento(req.params.id);
+    if (typeof evento._id !== 'undefined') {
+        mensaje += `OK ${evento._id}`;
+    } else {
+        mensaje += 'NOT_FOUND';
+    }
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(mensaje);
 });
 
 const url = process.env.MONGODB_URI;
