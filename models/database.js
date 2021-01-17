@@ -116,8 +116,8 @@ class Db {
         }
     }
 
-    getEvento(id) {
-        return this.userModel.find({ _id: id }).limit(1);
+    async getEvento(id) {
+        return await this.userModel.find({ _id: id }).limit(1);
     }
 }
 
