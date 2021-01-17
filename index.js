@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -71,7 +70,7 @@ app.post('/webhooks/telegram', async (req, res) => {
 
 app.get('/webhooks/telegram/:id', (req, res) => {
     let mensaje = '';
-    const evento = userDB.getEvento(ObjectId(req.params.id));
+    const evento = userDB.getEvento(mongoose.Types.ObjectId(req.params.id));
     console.log(evento);
     if (typeof evento._id !== 'undefined') {
         mensaje += `OK ${evento._id.str}`;
