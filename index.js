@@ -65,11 +65,11 @@ app.post('/webhooks/telegram', async (req, res) => {
             res.status(201).json(objetoJSON);
         } else {
             console.log(req);
-            res.status(200).send('FIELD_MESSAGE_EMPTY');
+            res.status(400).send('FIELD_MESSAGE_EMPTY');
         }
     } else {
         console.log(req);
-        res.status(200).send('FIELD_BODY_EMPTY');
+        res.status(400).send('FIELD_BODY_EMPTY');
     }
 });
 
