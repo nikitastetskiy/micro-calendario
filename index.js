@@ -24,6 +24,7 @@ app.post('/webhooks/telegram', async (req, res) => {
         let mensaje = '';
         // Pillamos el body
         const { text } = req.body.message;
+        console.log(text);
         // Comprobamos el contenido del mensaje
         if (text === '/help' || text.charAt(0) !== '/') {
             mensaje =
