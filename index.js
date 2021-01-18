@@ -43,7 +43,8 @@ app.post('/webhooks/telegram', async (req, res) => {
                 const fec = evento.getFecha();
                 const mot = evento.getMotivo().toString();
                 const eve = await userDB.createEvento(id, chat, fec, mot);
-                res.location(
+                res.set(
+                    'Location',
                     `/webhooks/telegram/${JSON.parse(JSON.stringify(eve))._id}`
                 );
                 mensaje = `Se ha creado evento en ${evento.toString()}`;
