@@ -1,0 +1,11 @@
+language: minimal
+
+script:
+    - docker run -t -v  $TRAVIS_BUILD_DIR:/test nikitastetskiy/micro-calendario
+
+deploy:
+    provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN_PAGES
+    on:
+        branch: master

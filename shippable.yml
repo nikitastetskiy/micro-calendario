@@ -1,0 +1,10 @@
+languaje: node_js
+
+branches:
+    only:
+        - master
+
+build:
+    ci:
+        - shippable_retry npm ci
+        - npm test

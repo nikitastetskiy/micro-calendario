@@ -1,0 +1,32 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/api/hello.js"
+        },
+        {
+            "src": "/hello",
+            "methods": [
+                "POST",
+                "GET"
+            ],
+            "dest": "/api/hello.js"
+        },
+        {
+            "src": "/calendar",
+            "methods": [
+                "POST",
+                "GET"
+            ],
+            "dest": "/api/calendar.js"
+        },
+        {
+            "src": "/calendar-bot",
+            "methods": [
+                "POST",
+                "GET"
+            ],
+            "dest": "/api/calendar-bot.js"
+        }
+    ]
+} 

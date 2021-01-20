@@ -1,0 +1,16 @@
+name: Eslinter y Prettier
+
+on: push
+
+jobs:
+    ESlint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Instalación de npm
+              run: npm install
+
+            - name: Ejecución de lint y prettier
+              run: npm run lint
