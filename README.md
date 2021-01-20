@@ -264,6 +264,9 @@ Aun así, a continuación puede disponer de toda la información esencial del pr
         <p>Finalmente, para la ejecución correcta de mi aplicación he tenido que crear una base de datos con MongoDB Atlas. He elegido esta opción porque principalmente necesitaba una base de datos NoSQL, es decir que haya un objeto por usuario y que ese objeto tenga un array de eventos. A medida que lo estaba haciendo, me encontré con muchos fallos a la hora de implementar la clase, por lo que al final no lo implementé como array, pero continué usando MongoDB. La clase dónde implementé MongoDb se encuentra en <a href="/models/database.js">este archivo</a>. Para el uso correcto de base de datos, implementé <a href="scheduled-job.js">un script en js</a> dónde lo ejecuto gracias al Scheduler de Heroku. Lo que hago en ese script es recorrer los eventos expirados y enviarlos con una request por https a través de la api de telegram. Este script se puede ejecutar cada hora.</p>
         <p>Aquí una prueba del funcionamiento:</p>
         <p><img src="docs/img/paas.png" alt=""></p>
+        <p>Para conectar y activar los despliegues automáticos de Heroku. Tenemos que añadir nuestro repositorio en Heroku y activar los deploys automáticos para la rama master.</p>
+        <p><img src="docs/img/paas1.png" alt=""></p>
+        <p><img src="docs/img/paas2.png" alt=""></p>
         <p>Todo lo relacionado con las pautas de creación y configuración se encuentra en <a href="docs/herramientas.md">este enlace</a>.</p>
     </blockquote> </dd>
 </dl>

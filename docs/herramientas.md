@@ -183,3 +183,9 @@ Finalmente, para la ejecución correcta de mi aplicación he tenido que crear un
 Aquí una prueba del funcionamiento:
 
 ![](../docs/img/paas.png)
+
+Para conectar y activar los despliegues automáticos de Heroku. Tenemos que añadir nuestro repositorio en Heroku y activar los deploys automáticos para la rama master.
+
+![](../docs/img/paas1.png)
+
+![](../docs/img/paas2.png)
